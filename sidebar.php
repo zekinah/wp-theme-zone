@@ -6,12 +6,12 @@
  *
  * @package eXePress
  */
-
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	return;
 }
 ?>
-
-<aside id="secondary" class="widget-area">
+<div class="col-md-4 widget-area" id="secondary" role="complementary">
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>
-</aside><!-- #secondary -->
+</div><!-- #secondary -->
