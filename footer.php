@@ -23,7 +23,7 @@ $container = get_theme_mod( 'exepress_container_type' );
 				<div class="col-md-12">
 					<footer class="site-footer" id="colophon">
 						<div class="site-info">
-							<?php understrap_site_info(); ?>
+							<?php exepress_site_info(); ?>
 						</div><!-- .site-info -->
 					</footer><!-- #colophon -->
 				</div><!--col end -->
