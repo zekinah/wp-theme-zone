@@ -8,23 +8,29 @@
  *
  * @package eXePress
  */
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 $container = get_theme_mod( 'exepress_container_type' );
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> >
 <?php wp_body_open(); ?>
 <div class="site" id="page">
 <!-- ******************* The Navbar Area ******************* -->
 	<div id="wrapper-navbar">
 		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'exepress' ); ?></a>
 		<nav id="main-nav" class="navbar navbar-expand-md navbar-dark bg-primary" aria-labelledby="main-nav-label">
+			<h2 id="main-nav-label" class="sr-only">
+				<?php esc_html_e( 'Main Navigation', 'exepress' ); ?>
+			</h2>
 		<?php if ( 'container' === $container ) : ?>
 			<div class="container">
 		<?php endif; ?>
@@ -51,6 +57,7 @@ $container = get_theme_mod( 'exepress_container_type' );
 						'theme_location' => 'menu-1',
 						'container_class' => 'collapse navbar-collapse',
 						'container_id'    => 'navbarNavDropdown',
+						'menu_class'      => 'navbar-nav ml-auto',
 						'depth'           => 2,
 						'menu_id'        => 'primary-menu',
 					)

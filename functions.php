@@ -21,8 +21,9 @@ $requireFiles = array(
 	'/custom-header.php',				// Initialize Custom header
 	'/template-tags.php', 				// Custom template tags for this theme.
 	'/template-functions.php',			// Functions definition for Page Templates.
+	'/widgets.php',                    	// Custom functions that act independently of the theme templates.
+	'/hooks.php',                       // Custom hooks.
 	'/extras.php',                      // Custom functions that act independently of the theme templates.
-	'/widgets.php',                      // Custom functions that act independently of the theme templates.
 	'/customizer.php', 					// Customizer additions.
 	'/jetpack.php',						// Load Jetpack compatibility file.
 	'/woocommerce.php',					// Initialize Custom functions/templates for WooCommerce
