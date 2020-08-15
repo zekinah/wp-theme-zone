@@ -34,9 +34,7 @@ $container = get_theme_mod( 'exepress_container_type' );
 
 				endwhile; // End of the loop.
 				?>
-
 			</main><!-- #main -->
-			<?php get_sidebar(); ?>
 		</div><!-- .row -->
 	</div><!-- #content -->
 </div><!-- #archive-wrapper -->
