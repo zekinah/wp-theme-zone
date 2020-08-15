@@ -43,7 +43,7 @@ add_action( 'after_setup_theme', 'exepress_woocommerce_setup' );
  * @return void
  */
 function exepress_woocommerce_scripts() {
-	wp_enqueue_style( 'exepress-woocommerce-style', get_template_directory_uri() . '/woocommerce.css', array(), EXEPRESS_VERSION );
+	wp_enqueue_style( 'exepress-woocommerce-style', get_template_directory_uri() . '/css/woocommerce.css', array(), EXEPRESS_VERSION );
 
 	$font_path   = WC()->plugin_url() . '/assets/fonts/';
 	$inline_font = '@font-face {
