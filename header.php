@@ -24,7 +24,6 @@ $container = get_theme_mod( 'exepress_container_type' );
 <body <?php body_class(); ?> >
 <?php wp_body_open(); ?>
 <div class="site" id="page">
-<!-- ******************* The Navbar Area ******************* -->
 	<div id="wrapper-navbar">
 		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'exepress' ); ?></a>
 		<nav id="main-nav" class="navbar navbar-expand-md navbar-dark bg-primary" aria-labelledby="main-nav-label">

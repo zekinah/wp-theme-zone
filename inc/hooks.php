@@ -37,7 +37,7 @@ if ( ! function_exists( 'exepress_add_site_info' ) ) {
 				/* translators: 1: Theme name, 2: Theme author */
 				esc_html__( 'Theme: %1$s by %2$s.', 'exepress' ),
 				$the_theme->get( 'Name' ),
-				'<a href="' . esc_url( __( 'http://exepress.com', 'exepress' ) ) . '">exepress.com</a>'
+				'<a href="' . esc_url( __( 'http://exepress.com', 'exepress' ) ) . '">primeview.com</a>'
 			),
 			sprintf( // WPCS: XSS ok.
 				/* translators: Theme version */
