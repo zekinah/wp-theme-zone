@@ -58,8 +58,8 @@ if ( ! function_exists( 'exepress_header_style' ) ) :
 		// Has the text been hidden?
 		if ( ! display_header_text() ) :
 			?>
-			.site-title,
-			.site-description {
+			.navbar-brand,
+			.brand-description {
 				position: absolute;
 				clip: rect(1px, 1px, 1px, 1px);
 				}
@@ -67,8 +67,8 @@ if ( ! function_exists( 'exepress_header_style' ) ) :
 			// If the user has set a custom color for the text use that.
 		else :
 			?>
-			.site-title a,
-			.site-description {
+			.navbar-brand a,
+			.brand-description {
 				color: #<?php echo esc_attr( $header_text_color ); ?>;
 			}
 		<?php endif; ?>

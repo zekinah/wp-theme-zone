@@ -44,8 +44,11 @@ $container = get_theme_mod( 'exepress_container_type' );
 					} else {
 						the_custom_logo();
 					}
+					$test_description = get_bloginfo( 'description', 'display' );
+					if ( $test_description || is_customize_preview() ) :
 					?>
-					<!-- end custom logo -->
+						<p class="brand-description"><?php echo $test_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+					<?php endif; ?>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'exepress' ); ?>">
 					<span class="navbar-toggler-icon"></span>
 				</button>
