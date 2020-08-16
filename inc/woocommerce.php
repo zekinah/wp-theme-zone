@@ -7,6 +7,9 @@
  * @package eXePress
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 /**
  * WooCommerce setup function.
  *

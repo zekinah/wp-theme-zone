@@ -17,7 +17,6 @@ $requireFiles = array(
 	'/setup.php',
 	'/theme-settings.php',				// Initialize theme default settings.
 	'/enqueue.php',						// Enqueue scripts and styles.// Enqueue scripts and styles. 
-	'/dynamic-sidebar.php',				// Functions Definitions for Dynamic Sidebars (Widgets)
 	'/custom-header.php',				// Initialize Custom header
 	'/template-tags.php', 				// Custom template tags for this theme.
 	'/template-functions.php',			// Functions definition for Page Templates.
