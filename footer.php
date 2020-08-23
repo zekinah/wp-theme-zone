@@ -15,7 +15,7 @@ defined( 'ABSPATH' ) || exit;
 $container = get_theme_mod( 'exepress_container_type' );
 ?>
 
-	<?php get_template_part( 'sidebar-templates/sidebar', 'footerfull' ); ?>
+	<?php get_template_part( 'template-parts/widget', 'footerfull' ); ?>
 
 	<div class="wrapper" id="wrapper-footer">
 		<div class="<?php echo esc_attr( $container ); ?>">

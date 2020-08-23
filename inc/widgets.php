@@ -100,6 +100,7 @@ if ( ! function_exists( 'exepress_widgets_init' ) ) {
 	 * Initializes themes widgets.
 	 */
 	function exepress_widgets_init() {
+		// sidebar.php
 		register_sidebar(
 			array(
 				'name'          => esc_html__( 'Sidebar', 'exepress' ),
@@ -112,50 +113,27 @@ if ( ! function_exists( 'exepress_widgets_init' ) ) {
 			)
 		);
 		
-		register_sidebar(
-			array(
-				'name'          => __( 'Right Sidebar', 'exepress' ),
-				'id'            => 'right-sidebar',
-				'description'   => __( 'Right sidebar widget area', 'exepress' ),
-				'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-				'after_widget'  => '</aside>',
-				'before_title'  => '<h3 class="widget-title">',
-				'after_title'   => '</h3>',
-			)
-		);
-
-		register_sidebar(
-			array(
-				'name'          => __( 'Left Sidebar', 'exepress' ),
-				'id'            => 'left-sidebar',
-				'description'   => __( 'Left sidebar widget area', 'exepress' ),
-				'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-				'after_widget'  => '</aside>',
-				'before_title'  => '<h3 class="widget-title">',
-				'after_title'   => '</h3>',
-			)
-		);
-
-
+		// template-parts/widget-topfull.php
 		register_sidebar(
 			array(
 				'name'          => __( 'Top Full', 'exepress' ),
-				'id'            => 'statichero',
+				'id'            => 'topfull',
 				'description'   => __( 'Full top widget with dynamic grid', 'exepress' ),
-				'before_widget' => '<div id="%1$s" class="static-hero-widget %2$s dynamic-classes">',
-				'after_widget'  => '</div><!-- .static-hero-widget -->',
+				'before_widget' => '<div id="%1$s" class="top-full-widget %2$s dynamic-classes">',
+				'after_widget'  => '</div>',
 				'before_title'  => '<h3 class="widget-title">',
 				'after_title'   => '</h3>',
 			)
 		);
 
+		// template-parts/widget-footerfull.php
 		register_sidebar(
 			array(
 				'name'          => __( 'Footer Full', 'exepress' ),
 				'id'            => 'footerfull',
 				'description'   => __( 'Full sized footer widget with dynamic grid', 'exepress' ),
 				'before_widget' => '<div id="%1$s" class="footer-widget %2$s dynamic-classes">',
-				'after_widget'  => '</div><!-- .footer-widget -->',
+				'after_widget'  => '</div>',
 				'before_title'  => '<h3 class="widget-title">',
 				'after_title'   => '</h3>',
 			)
