@@ -26,7 +26,7 @@ $container = get_theme_mod( 'exepress_container_type' );
 <div class="site" id="page">
 	<div id="wrapper-navbar">
 		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'exepress' ); ?></a>
-		<nav id="main-nav" class="navbar navbar-expand-md navbar-dark bg-primary" aria-labelledby="main-nav-label">
+		<nav id="main-nav" class="navbar navbar-expand-md navbar-dark bg-dark" aria-labelledby="main-nav-label">
 			<h2 id="main-nav-label" class="sr-only">
 				<?php esc_html_e( 'Main Navigation', 'exepress' ); ?>
 			</h2>
@@ -62,6 +62,7 @@ $container = get_theme_mod( 'exepress_container_type' );
 						'menu_class'      => 'navbar-nav ml-auto',
 						'depth'           => 2,
 						'menu_id'        => 'primary-menu',
+						'walker'          => new Exepress_WP_Bootstrap_Navwalker(),
 					)
 				);
 				?>

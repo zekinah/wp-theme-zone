@@ -23,7 +23,7 @@ $requireFiles = array(
 	'/extras.php',                      // Custom functions that act independently of the theme templates.
 	'/customizer.php', 					// Customizer additions.
 	'/custom-header.php',				// Initialize Custom header
-	'/jetpack.php',						// Load Jetpack compatibility file.
+	'/class-wp-bootstrap-navwalker.php',    // Load custom WordPress nav walker.
 	'/woocommerce.php',					// Initialize Custom functions/templates for WooCommerce
 );
 
