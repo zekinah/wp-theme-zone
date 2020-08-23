@@ -11,7 +11,6 @@
 defined( 'ABSPATH' ) || exit;
 
 add_filter( 'body_class', 'exepress_body_classes' );
-
 if ( ! function_exists( 'exepress_body_classes' ) ) {
 	/**
 	 * Adds custom classes to the array of body classes.
@@ -36,7 +35,6 @@ if ( ! function_exists( 'exepress_body_classes' ) ) {
 
 // Removes tag class from the body_class array to avoid Bootstrap markup styling issues.
 add_filter( 'body_class', 'exepress_adjust_body_class' );
-
 if ( ! function_exists( 'exepress_adjust_body_class' ) ) {
 	/**
 	 * Setup body classes.
@@ -60,7 +58,6 @@ if ( ! function_exists( 'exepress_adjust_body_class' ) ) {
 
 // Filter custom logo with correct classes.
 add_filter( 'get_custom_logo', 'exepress_change_logo_class' );
-
 if ( ! function_exists( 'exepress_change_logo_class' ) ) {
 	/**
 	 * Replaces logo CSS class.
@@ -79,10 +76,8 @@ if ( ! function_exists( 'exepress_change_logo_class' ) ) {
 	}
 }
 
+// Display navigation to next/previous post when applicable.
 if ( ! function_exists( 'exepress_post_nav' ) ) {
-	/**
-	 * Display navigation to next/previous post when applicable.
-	 */
 	function exepress_post_nav() {
 		// Don't print empty markup if there's nowhere to navigate.
 		$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
@@ -109,55 +104,39 @@ if ( ! function_exists( 'exepress_post_nav' ) ) {
 	}
 }
 
+// Add a pingback url auto-discovery header for single posts of any post type.
+add_action( 'wp_head', 'exepress_pingback' );
 if ( ! function_exists( 'exepress_pingback' ) ) {
-	/**
-	 * Add a pingback url auto-discovery header for single posts of any post type.
-	 */
 	function exepress_pingback() {
 		if ( is_singular() && pings_open() ) {
 			echo '<link rel="pingback" href="' . esc_url( get_bloginfo( 'pingback_url' ) ) . '">' . "\n";
 		}
 	}
 }
-add_action( 'wp_head', 'exepress_pingback' );
 
+// Add mobile-web-app meta.
+add_action( 'wp_head', 'exepress_mobile_web_app_meta' );
 if ( ! function_exists( 'exepress_mobile_web_app_meta' ) ) {
-	/**
-	 * Add mobile-web-app meta.
-	 */
 	function exepress_mobile_web_app_meta() {
 		echo '<meta name="mobile-web-app-capable" content="yes">' . "\n";
 		echo '<meta name="apple-mobile-web-app-capable" content="yes">' . "\n";
 		echo '<meta name="apple-mobile-web-app-title" content="' . esc_attr( get_bloginfo( 'name' ) ) . ' - ' . esc_attr( get_bloginfo( 'description' ) ) . '">' . "\n";
 	}
 }
-add_action( 'wp_head', 'exepress_mobile_web_app_meta' );
 
+// Adds schema markup to the body element.
+add_filter( 'exepress_body_attributes', 'exepress_default_body_attributes' );
 if ( ! function_exists( 'exepress_default_body_attributes' ) ) {
-	/**
-	 * Adds schema markup to the body element.
-	 *
-	 * @param array $atts An associative array of attributes.
-	 * @return array
-	 */
 	function exepress_default_body_attributes( $atts ) {
 		$atts['itemscope'] = '';
 		$atts['itemtype']  = 'http://schema.org/WebSite';
 		return $atts;
 	}
 }
-add_filter( 'exepress_body_attributes', 'exepress_default_body_attributes' );
 
 // Escapes all occurances of 'the_archive_description'.
 add_filter( 'get_the_archive_description', 'exepress_escape_the_archive_description' );
-
 if ( ! function_exists( 'exepress_escape_the_archive_description' ) ) {
-	/**
-	 * Escapes the description for an author or post type archive.
-	 *
-	 * @param string $description Archive description.
-	 * @return string Maybe escaped $description.
-	 */
 	function exepress_escape_the_archive_description( $description ) {
 		if ( is_author() || is_post_type_archive() ) {
 			return wp_kses_post( $description );
@@ -169,21 +148,15 @@ if ( ! function_exists( 'exepress_escape_the_archive_description' ) ) {
 			return $description;
 		}
 	}
-} // End of if function_exists( 'exepress_escape_the_archive_description' ).
+} 
 
 // Escapes all occurances of 'the_title()' and 'get_the_title()'.
 add_filter( 'the_title', 'exepress_kses_title' );
 
 // Escapes all occurances of 'the_archive_title' and 'get_the_archive_title()'.
 add_filter( 'get_the_archive_title', 'exepress_kses_title' );
-
+// Sanitizes data for allowed HTML tags for post title.
 if ( ! function_exists( 'exepress_kses_title' ) ) {
-	/**
-	 * Sanitizes data for allowed HTML tags for post title.
-	 *
-	 * @param string $data Post title to filter.
-	 * @return string Filtered post title with allowed HTML tags and attributes intact.
-	 */
 	function exepress_kses_title( $data ) {
 		// Tags not supported in HTML5 are not allowed.
 		$allowed_tags = array(
@@ -251,4 +224,20 @@ if ( ! function_exists( 'exepress_kses_title' ) ) {
 
 		return wp_kses( $data, $allowed_tags );
 	}
-} // End of if function_exists( 'exepress_kses_title' ).
+}
+
+// Exepress Pagination
+if ( ! function_exists( 'exepress_pagination' ) ) {
+	function exepress_pagination() {
+		global $wp_query;
+		$big = 999999999; // need an unlikely integer
+		echo paginate_links( array(
+			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+			'format' => '?paged=%#%',
+			'current' => max( 1, get_query_var('paged') ),
+			'prev_text'          => __('«'),
+			'next_text'          => __('»'),
+			'total' => $wp_query->max_num_pages
+		) );
+	}
+}
