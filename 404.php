@@ -20,6 +20,9 @@ $container = get_theme_mod( 'exepress_container_type' );
 				<main class="site-main" id="main">
 					<section class="error-404 not-found">
 						<header class="page-header">
+							<div class="text-center glitch-main">
+								<a href="#" class="glitch" data-glitch="404">404</a>
+							</div>
 							<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'exepress' ); ?></h1>
 						</header><!-- .page-header -->
 						<div class="page-content">
