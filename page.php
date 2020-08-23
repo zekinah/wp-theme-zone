@@ -33,6 +33,8 @@ $container = get_theme_mod( 'exepress_container_type' );
 						endif;
 
 					endwhile; // End of the loop.
+					wp_reset_query(); 
+					echo '<div class="pagination">'.exepress_pagination().'</div>'; // Pagination
 					?>
 
 				</main><!-- #main -->

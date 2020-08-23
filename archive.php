@@ -30,7 +30,8 @@ $container = get_theme_mod( 'exepress_container_type' );
 							the_post();
 							get_template_part( 'template-parts/content', get_post_type() );
 						endwhile;
-						the_posts_navigation();
+						wp_reset_query();
+						echo '<div class="pagination">'.exepress_pagination().'</div>'; // Pagination
 					else :
 						get_template_part( 'template-parts/content', 'none' );
 					endif;

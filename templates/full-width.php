@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Full-width, no sidebar Page Template (Bootstrap 12 Column Grid)
+ * Template Name: Full-width No Sidebar
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *

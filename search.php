@@ -36,7 +36,8 @@ $container = get_theme_mod( 'exepress_container_type' );
 							 */
 							get_template_part( 'template-parts/content', 'search' );
 						endwhile;
-						the_posts_navigation();
+						wp_reset_query();
+						echo '<div class="pagination">'.exepress_pagination().'</div>'; // Pagination
 					else :
 						get_template_part( 'template-parts/content', 'none' );
 
