@@ -14,16 +14,15 @@ defined( 'ABSPATH' ) || exit;
  * 
 */
 $requireFiles = array(
-	'/setup.php',
 	'/theme-settings.php',				// Initialize theme default settings.
-	'/enqueue.php',						// Enqueue scripts and styles.// Enqueue scripts and styles. 
-	'/custom-header.php',				// Initialize Custom header
-	'/template-tags.php', 				// Custom template tags for this theme.
-	'/template-functions.php',			// Functions definition for Page Templates.
+	'/setup.php',                       // Theme setup and custom theme supports.
 	'/widgets.php',                    	// Custom functions that act independently of the theme templates.
+	'/enqueue.php',						// Enqueue scripts and styles.// Enqueue scripts and styles.
+	'/template-tags.php', 				// Custom template tags for this theme. 
 	'/hooks.php',                       // Custom hooks.
 	'/extras.php',                      // Custom functions that act independently of the theme templates.
 	'/customizer.php', 					// Customizer additions.
+	'/custom-header.php',				// Initialize Custom header
 	'/jetpack.php',						// Load Jetpack compatibility file.
 	'/woocommerce.php',					// Initialize Custom functions/templates for WooCommerce
 );

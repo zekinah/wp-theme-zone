@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<ruleset name="UnderStrap Coding Standards">
+<ruleset name="WordPress Theme Coding Standards">
 
-	<description>Apply WordPress Coding Standards to UnderStrap</description>
+	<description>Apply WordPress Coding Standards to ordPress themes.</description>
 
 	<!-- Whenever possible, cache the scan results and re-use those for unchanged files on the next scan. -->
 	<arg name="cache" value=".phpcs-cache"/>
@@ -41,7 +41,7 @@
 	-->
 	<rule ref="WordPress.WP.I18n">
 		<properties>
-			<property name="text_domain" type="array" value="understrap"/>
+			<property name="text_domain" type="array" value="exepress"/>
 		</properties>
 	</rule>
 
@@ -58,11 +58,6 @@
 	<!-- Assignments in while conditions are a valid method of looping over iterables. -->
 	<rule ref="WordPress.CodeAnalysis.AssignmentInCondition.FoundInWhileCondition">
 		<exclude-pattern>*</exclude-pattern>
-	</rule>
-
-	<!-- Exclude incorrectly named files that won't be renamed. -->
-	<rule ref="WordPress.Files.FileName.InvalidClassFileName">
-		<exclude-pattern>/inc/class-wp-bootstrap-navwalker\.php</exclude-pattern>
 	</rule>
 
 	<rule ref="WordPress.Security.EscapeOutput">
