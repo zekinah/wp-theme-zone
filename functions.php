@@ -24,7 +24,7 @@ $requireFiles = array(
 	'/customizer.php', 					// Customizer additions.
 	'/custom-header.php',				// Initialize Custom header
 	'/class-wp-bootstrap-navwalker.php',    // Load custom WordPress nav walker.
-	'/woocommerce.php',					// Initialize Custom functions/templates for WooCommerce
+	//'/woocommerce.php',					// Initialize Custom functions/templates for WooCommerce
 );
 
 foreach ($requireFiles as $file) {
