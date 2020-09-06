@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Full-width No Sidebar
+ * Template Name: Full width No Sidebar template
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -18,7 +18,7 @@ $container = get_theme_mod( 'themezone_container_type' );
 	</header>
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 		<div class="row">
-			<div class="col-md content-area" id="primary">
+			<div class="col-md-12 content-area" id="primary">
 				<main id="primary" class="site-main">
 					<?php
 						while ( have_posts() ) :
@@ -29,7 +29,6 @@ $container = get_theme_mod( 'themezone_container_type' );
 					?>
 				</main><!-- #main -->
 			</div>
-			<?php get_sidebar(); ?>
 		</div><!-- .row -->
 	</div><!-- #content -->
 	<?php

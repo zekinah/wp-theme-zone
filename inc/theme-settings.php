@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
 
 // themezone Content Width
 add_action( 'after_setup_theme', 'themezone_content_width', 0 );
-if ( ! function_exists( 'themezone_pagination' ) ) {
+if ( ! function_exists( 'themezone_content_width' ) ) {
 	function themezone_content_width() {
 		// This variable is intended to be overruled from themes.
 		// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.

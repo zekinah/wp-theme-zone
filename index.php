@@ -19,7 +19,7 @@ $container = get_theme_mod( 'themezone_container_type' );
 <div class="wrapper" id="index-wrapper">
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 		<div class="row">
-			<div class="col-md content-area" id="primary">
+			<div class="col-md-8 content-area" id="primary">
 				<main id="primary" class="site-main">
 					<?php
 					if ( have_posts() ) :

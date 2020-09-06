@@ -85,8 +85,8 @@ if ( ! function_exists( 'themezone_theme_customize_register' ) ) {
 					'settings'    => 'themezone_container_type',
 					'type'        => 'select',
 					'choices'     => array(
-						'container'       => __( 'Fixed width container', 'themezone' ),
-						'container-fluid' => __( 'Full width container', 'themezone' ),
+						'container'       => __( 'Container', 'themezone' ),
+						'container-fluid' => __( 'Container Fluid', 'themezone' ),
 					),
 					'priority'    => apply_filters( 'themezone_container_type_priority', 10 ),
 				)

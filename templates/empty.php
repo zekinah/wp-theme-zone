@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Empty page Template
+ * Template Name: Empty page template
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
