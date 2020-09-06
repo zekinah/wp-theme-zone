@@ -4,12 +4,12 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package eXePress
+ * @package themezone
  */
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 get_header();
-$container = get_theme_mod( 'exepress_container_type' );
+$container = get_theme_mod( 'themezone_container_type' );
 ?>
 <div class="wrapper" id="archive-wrapper">
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
@@ -21,7 +21,7 @@ $container = get_theme_mod( 'exepress_container_type' );
 							<h1 class="page-title">
 								<?php
 								/* translators: %s: search query. */
-								printf( esc_html__( 'Search Results for: %s', 'exepress' ), '<span>' . get_search_query() . '</span>' );
+								printf( esc_html__( 'Search Results for: %s', 'themezone' ), '<span>' . get_search_query() . '</span>' );
 								?>
 							</h1>
 						</header><!-- .page-header -->
@@ -37,7 +37,7 @@ $container = get_theme_mod( 'exepress_container_type' );
 							get_template_part( 'template-parts/content', 'search' );
 						endwhile;
 						wp_reset_query();
-						echo '<div class="pagination">'.exepress_pagination().'</div>'; // Pagination
+						echo '<div class="pagination">'.themezone_pagination().'</div>'; // Pagination
 					else :
 						get_template_part( 'template-parts/content', 'none' );
 

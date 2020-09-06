@@ -4,12 +4,12 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package eXePress
+ * @package themezone
  */
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 get_header();
-$container = get_theme_mod( 'exepress_container_type' );
+$container = get_theme_mod( 'themezone_container_type' );
 ?>
 <div class="wrapper" id="full-width-wrapper" class="full-width site-content">
 <?php if ( have_posts() ) : ?>

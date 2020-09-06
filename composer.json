@@ -1,17 +1,17 @@
 {
-    "name": "primeview/exepress-framework",
+    "name": "primeview/wp-theme-zone",
     "type": "wordpress-theme",
-    "description": "exepress-framework description",
+    "description": "wp-theme-zone description",
     "keywords": [
         "WordPress",
         "Themes"
     ],
-    "homepage": "https://github.com/zekinah/exepress-framework",
+    "homepage": "https://github.com/zekinah/wp-theme-zone",
     "license": "GPL-2.0-or-later",
     "authors": [
         {
             "name": "Contributors",
-            "homepage": "https://github.com/zekinah/exepress-framework/graphs/contributors"
+            "homepage": "https://github.com/zekinah/wp-theme-zone/graphs/contributors"
         }
     ],
     "require": {
@@ -29,7 +29,7 @@
         "make-pot": "wp i18n make-pot . languages/_s.pot"
     },
     "support": {
-        "issues": "https://github.com/zekinah/exepress-framework/issues",
-        "source": "https://github.com/zekinah/exepress-framework"
+        "issues": "https://github.com/zekinah/wp-theme-zone/issues",
+        "source": "https://github.com/zekinah/wp-theme-zone"
     }
 }

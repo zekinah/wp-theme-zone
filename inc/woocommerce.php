@@ -4,7 +4,7 @@
  *
  * @link https://woocommerce.com/
  *
- * @package eXePress
+ * @package themezone
  */
 
 // Exit if accessed directly.
@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
  *
  * @return void
  */
-function exepress_woocommerce_setup() {
+function themezone_woocommerce_setup() {
 	add_theme_support(
 		'woocommerce',
 		array(
@@ -38,15 +38,15 @@ function exepress_woocommerce_setup() {
 	add_theme_support( 'wc-product-gallery-lightbox' );
 	add_theme_support( 'wc-product-gallery-slider' );
 }
-add_action( 'after_setup_theme', 'exepress_woocommerce_setup' );
+add_action( 'after_setup_theme', 'themezone_woocommerce_setup' );
 
 /**
  * WooCommerce specific scripts & stylesheets.
  *
  * @return void
  */
-function exepress_woocommerce_scripts() {
-	wp_enqueue_style( 'exepress-woocommerce-style', get_template_directory_uri() . '/css/woocommerce.css', array(), EXEPRESS_VERSION );
+function themezone_woocommerce_scripts() {
+	wp_enqueue_style( 'themezone-woocommerce-style', get_template_directory_uri() . '/css/woocommerce.css', array(), themezone_VERSION );
 
 	$font_path   = WC()->plugin_url() . '/assets/fonts/';
 	$inline_font = '@font-face {
@@ -60,9 +60,9 @@ function exepress_woocommerce_scripts() {
 			font-style: normal;
 		}';
 
-	wp_add_inline_style( 'exepress-woocommerce-style', $inline_font );
+	wp_add_inline_style( 'themezone-woocommerce-style', $inline_font );
 }
-add_action( 'wp_enqueue_scripts', 'exepress_woocommerce_scripts' );
+add_action( 'wp_enqueue_scripts', 'themezone_woocommerce_scripts' );
 
 /**
  * Disable the default WooCommerce stylesheet.
@@ -80,12 +80,12 @@ add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
  * @param  array $classes CSS classes applied to the body tag.
  * @return array $classes modified to include 'woocommerce-active' class.
  */
-function exepress_woocommerce_active_body_class( $classes ) {
+function themezone_woocommerce_active_body_class( $classes ) {
 	$classes[] = 'woocommerce-active';
 
 	return $classes;
 }
-add_filter( 'body_class', 'exepress_woocommerce_active_body_class' );
+add_filter( 'body_class', 'themezone_woocommerce_active_body_class' );
 
 /**
  * Related Products Args.
@@ -93,7 +93,7 @@ add_filter( 'body_class', 'exepress_woocommerce_active_body_class' );
  * @param array $args related products args.
  * @return array $args related products args.
  */
-function exepress_woocommerce_related_products_args( $args ) {
+function themezone_woocommerce_related_products_args( $args ) {
 	$defaults = array(
 		'posts_per_page' => 3,
 		'columns'        => 3,
@@ -103,7 +103,7 @@ function exepress_woocommerce_related_products_args( $args ) {
 
 	return $args;
 }
-add_filter( 'woocommerce_output_related_products_args', 'exepress_woocommerce_related_products_args' );
+add_filter( 'woocommerce_output_related_products_args', 'themezone_woocommerce_related_products_args' );
 
 /**
  * Remove default WooCommerce wrapper.
@@ -111,7 +111,7 @@ add_filter( 'woocommerce_output_related_products_args', 'exepress_woocommerce_re
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
 
-if ( ! function_exists( 'exepress_woocommerce_wrapper_before' ) ) {
+if ( ! function_exists( 'themezone_woocommerce_wrapper_before' ) ) {
 	/**
 	 * Before Content.
 	 *
@@ -119,15 +119,15 @@ if ( ! function_exists( 'exepress_woocommerce_wrapper_before' ) ) {
 	 *
 	 * @return void
 	 */
-	function exepress_woocommerce_wrapper_before() {
+	function themezone_woocommerce_wrapper_before() {
 		?>
 			<main id="primary" class="site-main">
 		<?php
 	}
 }
-add_action( 'woocommerce_before_main_content', 'exepress_woocommerce_wrapper_before' );
+add_action( 'woocommerce_before_main_content', 'themezone_woocommerce_wrapper_before' );
 
-if ( ! function_exists( 'exepress_woocommerce_wrapper_after' ) ) {
+if ( ! function_exists( 'themezone_woocommerce_wrapper_after' ) ) {
 	/**
 	 * After Content.
 	 *
@@ -135,13 +135,13 @@ if ( ! function_exists( 'exepress_woocommerce_wrapper_after' ) ) {
 	 *
 	 * @return void
 	 */
-	function exepress_woocommerce_wrapper_after() {
+	function themezone_woocommerce_wrapper_after() {
 		?>
 			</main><!-- #main -->
 		<?php
 	}
 }
-add_action( 'woocommerce_after_main_content', 'exepress_woocommerce_wrapper_after' );
+add_action( 'woocommerce_after_main_content', 'themezone_woocommerce_wrapper_after' );
 
 /**
  * Sample implementation of the WooCommerce Mini Cart.
@@ -149,13 +149,13 @@ add_action( 'woocommerce_after_main_content', 'exepress_woocommerce_wrapper_afte
  * You can add the WooCommerce Mini Cart to header.php like so ...
  *
 	<?php
-		if ( function_exists( 'exepress_woocommerce_header_cart' ) ) {
-			exepress_woocommerce_header_cart();
+		if ( function_exists( 'themezone_woocommerce_header_cart' ) ) {
+			themezone_woocommerce_header_cart();
 		}
 	?>
  */
 
-if ( ! function_exists( 'exepress_woocommerce_cart_link_fragment' ) ) {
+if ( ! function_exists( 'themezone_woocommerce_cart_link_fragment' ) ) {
 	/**
 	 * Cart Fragments.
 	 *
@@ -164,17 +164,17 @@ if ( ! function_exists( 'exepress_woocommerce_cart_link_fragment' ) ) {
 	 * @param array $fragments Fragments to refresh via AJAX.
 	 * @return array Fragments to refresh via AJAX.
 	 */
-	function exepress_woocommerce_cart_link_fragment( $fragments ) {
+	function themezone_woocommerce_cart_link_fragment( $fragments ) {
 		ob_start();
-		exepress_woocommerce_cart_link();
+		themezone_woocommerce_cart_link();
 		$fragments['a.cart-contents'] = ob_get_clean();
 
 		return $fragments;
 	}
 }
-add_filter( 'woocommerce_add_to_cart_fragments', 'exepress_woocommerce_cart_link_fragment' );
+add_filter( 'woocommerce_add_to_cart_fragments', 'themezone_woocommerce_cart_link_fragment' );
 
-if ( ! function_exists( 'exepress_woocommerce_cart_link' ) ) {
+if ( ! function_exists( 'themezone_woocommerce_cart_link' ) ) {
 	/**
 	 * Cart Link.
 	 *
@@ -182,13 +182,13 @@ if ( ! function_exists( 'exepress_woocommerce_cart_link' ) ) {
 	 *
 	 * @return void
 	 */
-	function exepress_woocommerce_cart_link() {
+	function themezone_woocommerce_cart_link() {
 		?>
-		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'exepress' ); ?>">
+		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'themezone' ); ?>">
 			<?php
 			$item_count_text = sprintf(
 				/* translators: number of items in the mini cart. */
-				_n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'exepress' ),
+				_n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'themezone' ),
 				WC()->cart->get_cart_contents_count()
 			);
 			?>
@@ -198,13 +198,13 @@ if ( ! function_exists( 'exepress_woocommerce_cart_link' ) ) {
 	}
 }
 
-if ( ! function_exists( 'exepress_woocommerce_header_cart' ) ) {
+if ( ! function_exists( 'themezone_woocommerce_header_cart' ) ) {
 	/**
 	 * Display Header Cart.
 	 *
 	 * @return void
 	 */
-	function exepress_woocommerce_header_cart() {
+	function themezone_woocommerce_header_cart() {
 		if ( is_cart() ) {
 			$class = 'current-menu-item';
 		} else {
@@ -213,7 +213,7 @@ if ( ! function_exists( 'exepress_woocommerce_header_cart' ) ) {
 		?>
 		<ul id="site-header-cart" class="site-header-cart">
 			<li class="<?php echo esc_attr( $class ); ?>">
-				<?php exepress_woocommerce_cart_link(); ?>
+				<?php themezone_woocommerce_cart_link(); ?>
 			</li>
 			<li>
 				<?php

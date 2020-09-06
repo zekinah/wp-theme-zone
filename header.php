@@ -6,12 +6,12 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package eXePress
+ * @package themezone
  */
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-$container = get_theme_mod( 'exepress_container_type' );
+$container = get_theme_mod( 'themezone_container_type' );
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -25,10 +25,10 @@ $container = get_theme_mod( 'exepress_container_type' );
 <?php wp_body_open(); ?>
 <div class="site" id="page">
 	<div id="wrapper-navbar">
-		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'exepress' ); ?></a>
+		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'themezone' ); ?></a>
 		<nav id="main-nav" class="navbar navbar-expand-md navbar-dark bg-dark" aria-labelledby="main-nav-label">
 			<h2 id="main-nav-label" class="sr-only">
-				<?php esc_html_e( 'Main Navigation', 'exepress' ); ?>
+				<?php esc_html_e( 'Main Navigation', 'themezone' ); ?>
 			</h2>
 		<?php if ( 'container' === $container ) : ?>
 			<div class="container">
@@ -49,7 +49,7 @@ $container = get_theme_mod( 'exepress_container_type' );
 					?>
 						<p class="brand-description"><?php echo $test_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 					<?php endif; ?>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'exepress' ); ?>">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'themezone' ); ?>">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<!-- The WordPress Menu goes here -->
@@ -62,7 +62,7 @@ $container = get_theme_mod( 'exepress_container_type' );
 						'menu_class'      => 'navbar-nav ml-auto',
 						'depth'           => 2,
 						'menu_id'        => 'primary-menu',
-						'walker'          => new Exepress_WP_Bootstrap_Navwalker(),
+						'walker'          => new WP_Bootstrap_Navwalker(),
 					)
 				);
 				?>

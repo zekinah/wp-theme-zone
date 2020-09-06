@@ -1,7 +1,7 @@
 {
-  "name": "exepress-framework",
+  "name": "wp-theme-zone",
   "version": "1.0.0",
-  "description": "exepress-framework description",
+  "description": "wp-theme-zone description",
   "author": "Primeview",
   "license": "GPL-2.0-or-later",
   "scripts": {
@@ -17,13 +17,13 @@
     "framework",
     "bootstrap"
   ],
-  "homepage": "https://github.com/zekinah/exepress-framework",
+  "homepage": "https://github.com/zekinah/wp-theme-zone",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zekinah/exepress-framework.git"
+    "url": "git+https://github.com/zekinah/wp-theme-zone.git"
   },
   "bugs": {
-    "url": "https://github.com/zekinah/exepress-framework/issues"
+    "url": "https://github.com/zekinah/wp-theme-zone/issues"
   },
   "dependencies": {},
   "devDependencies": {

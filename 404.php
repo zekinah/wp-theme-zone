@@ -4,14 +4,14 @@
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
- * @package eXePress
+ * @package themezone
  */
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
 get_header();
 
-$container = get_theme_mod( 'exepress_container_type' );
+$container = get_theme_mod( 'themezone_container_type' );
 ?>
 <div class="wrapper" id="error-404-wrapper">
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
@@ -23,14 +23,14 @@ $container = get_theme_mod( 'exepress_container_type' );
 							<div class="text-center glitch-main">
 								<a href="#" class="glitch" data-glitch="404">404</a>
 							</div>
-							<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'exepress' ); ?></h1>
+							<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'themezone' ); ?></h1>
 						</header><!-- .page-header -->
 						<div class="page-content">
-							<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'exepress' ); ?></p>
+							<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'themezone' ); ?></p>
 							<?php get_search_form(); ?>
 							<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
 								<div class="widget widget_categories">
-									<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'exepress' ); ?></h2>
+									<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'themezone' ); ?></h2>
 									<ul>
 										<?php
 										wp_list_categories(

@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package eXePress
+ * @package themezone
  */
 
 ?>
@@ -22,14 +22,14 @@
 			?>
 			<div class="entry-meta">
 				<?php
-				exepress_posted_on();
-				exepress_posted_by();
+				themezone_posted_on();
+				themezone_posted_by();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php exepress_post_thumbnail(); ?>
+	<?php themezone_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
@@ -37,7 +37,7 @@
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'exepress' ),
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'themezone' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -50,7 +50,7 @@
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'exepress' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'themezone' ),
 				'after'  => '</div>',
 			)
 		);
@@ -58,6 +58,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php exepress_entry_footer(); ?>
+		<?php themezone_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

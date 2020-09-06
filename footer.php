@@ -6,13 +6,13 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package eXePress
+ * @package themezone
  */
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-$container = get_theme_mod( 'exepress_container_type' );
+$container = get_theme_mod( 'themezone_container_type' );
 ?>
 
 	<?php get_template_part( 'template-parts/widget', 'footerfull' ); ?>
@@ -23,7 +23,7 @@ $container = get_theme_mod( 'exepress_container_type' );
 				<div class="col-md-12">
 					<footer class="site-footer" id="colophon">
 						<div class="site-info">
-							<?php exepress_site_info(); ?>
+							<?php themezone_site_info(); ?>
 						</div><!-- .site-info -->
 					</footer><!-- #colophon -->
 				</div><!--col end -->

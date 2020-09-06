@@ -1,10 +1,10 @@
 <?php
 /**
- * eXePress functions and definitions
+ * themezone functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package eXePress
+ * @package themezone
  */
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;

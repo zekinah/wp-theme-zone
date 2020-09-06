@@ -1,10 +1,10 @@
 <?php
 /**
- * eXePress Dynamic Sidebar definition.
+ * themezone Dynamic Sidebar definition.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package eXePress
+ * @package themezone
  */
 
 // Exit if accessed directly.
@@ -16,9 +16,9 @@ defined( 'ABSPATH' ) || exit;
  *
  * @link https://developer.wordpress.org/reference/hooks/dynamic_sidebar_params/
  */
-add_filter( 'dynamic_sidebar_params', 'exepress_widget_classes' );
+add_filter( 'dynamic_sidebar_params', 'themezone_widget_classes' );
 
-if ( ! function_exists( 'exepress_widget_classes' ) ) {
+if ( ! function_exists( 'themezone_widget_classes' ) ) {
 
 	/**
 	 * Count number of visible widgets in a sidebar and add classes to widgets accordingly,
@@ -51,7 +51,7 @@ if ( ! function_exists( 'exepress_widget_classes' ) ) {
 	 * }
 	 * @return array $params
 	 */
-	function exepress_widget_classes( $params ) {
+	function themezone_widget_classes( $params ) {
 
 		global $sidebars_widgets;
 
@@ -91,21 +91,21 @@ if ( ! function_exists( 'exepress_widget_classes' ) ) {
 		return $params;
 
 	}
-} // End of if function_exists( 'exepress_widget_classes' ).
+} // End of if function_exists( 'themezone_widget_classes' ).
 
-add_action( 'widgets_init', 'exepress_widgets_init' );
+add_action( 'widgets_init', 'themezone_widgets_init' );
 
-if ( ! function_exists( 'exepress_widgets_init' ) ) {
+if ( ! function_exists( 'themezone_widgets_init' ) ) {
 	/**
 	 * Initializes themes widgets.
 	 */
-	function exepress_widgets_init() {
+	function themezone_widgets_init() {
 		// sidebar.php
 		register_sidebar(
 			array(
-				'name'          => esc_html__( 'Sidebar', 'exepress' ),
+				'name'          => esc_html__( 'Sidebar', 'themezone' ),
 				'id'            => 'sidebar-1',
-				'description'   => esc_html__( 'Add widgets here.', 'exepress' ),
+				'description'   => esc_html__( 'Add widgets here.', 'themezone' ),
 				'before_widget' => '<section id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</section>',
 				'before_title'  => '<h2 class="widget-title">',
@@ -116,9 +116,9 @@ if ( ! function_exists( 'exepress_widgets_init' ) ) {
 		// template-parts/widget-topfull.php
 		register_sidebar(
 			array(
-				'name'          => __( 'Top Full', 'exepress' ),
+				'name'          => __( 'Top Full', 'themezone' ),
 				'id'            => 'topfull',
-				'description'   => __( 'Full top widget with dynamic grid', 'exepress' ),
+				'description'   => __( 'Full top widget with dynamic grid', 'themezone' ),
 				'before_widget' => '<div id="%1$s" class="top-full-widget %2$s dynamic-classes">',
 				'after_widget'  => '</div>',
 				'before_title'  => '<h3 class="widget-title">',
@@ -129,9 +129,9 @@ if ( ! function_exists( 'exepress_widgets_init' ) ) {
 		// template-parts/widget-footerfull.php
 		register_sidebar(
 			array(
-				'name'          => __( 'Footer Full', 'exepress' ),
+				'name'          => __( 'Footer Full', 'themezone' ),
 				'id'            => 'footerfull',
-				'description'   => __( 'Full sized footer widget with dynamic grid', 'exepress' ),
+				'description'   => __( 'Full sized footer widget with dynamic grid', 'themezone' ),
 				'before_widget' => '<div id="%1$s" class="footer-widget %2$s dynamic-classes">',
 				'after_widget'  => '</div>',
 				'before_title'  => '<h3 class="widget-title">',
@@ -140,4 +140,4 @@ if ( ! function_exists( 'exepress_widgets_init' ) ) {
 		);
 
 	}
-} // End of function_exists( 'exepress_widgets_init' ).
+} // End of function_exists( 'themezone_widgets_init' ).

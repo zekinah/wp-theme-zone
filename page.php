@@ -9,12 +9,12 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package eXePress
+ * @package themezone
  */
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 get_header();
-$container = get_theme_mod( 'exepress_container_type' );
+$container = get_theme_mod( 'themezone_container_type' );
 ?>
 <div class="wrapper" id="archive-wrapper">
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
@@ -34,7 +34,7 @@ $container = get_theme_mod( 'exepress_container_type' );
 
 					endwhile; // End of the loop.
 					wp_reset_query(); 
-					echo '<div class="pagination">'.exepress_pagination().'</div>'; // Pagination
+					echo '<div class="pagination">'.themezone_pagination().'</div>'; // Pagination
 					?>
 
 				</main><!-- #main -->

@@ -3,12 +3,12 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-if ( ! defined( 'EXEPRESS_VERSION' ) ) {
+if ( ! defined( 'THEMEZONE_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'EXEPRESS_VERSION', '1.0.0' );
+	define( 'THEMEZONE_VERSION', '1.0.0' );
 }
 
-if ( ! function_exists( 'exepress_setup' ) ) :
+if ( ! function_exists( 'themezone_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -16,14 +16,14 @@ if ( ! function_exists( 'exepress_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function exepress_setup() {
+	function themezone_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on eXePress, use a find and replace
-		 * to change 'exepress' to the name of your theme in all the template files.
+		 * If you're building a theme based on themezone, use a find and replace
+		 * to change 'themezone' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'exepress', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'themezone', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -46,7 +46,7 @@ if ( ! function_exists( 'exepress_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'exepress' ),
+				'menu-1' => esc_html__( 'Primary', 'themezone' ),
 			)
 		);
 
@@ -71,7 +71,7 @@ if ( ! function_exists( 'exepress_setup' ) ) :
 		add_theme_support(
 			'custom-background',
 			apply_filters(
-				'exepress_custom_background_args',
+				'themezone_custom_background_args',
 				array(
 					'default-color' => 'ffffff',
 					'default-image' => '',
@@ -98,4 +98,4 @@ if ( ! function_exists( 'exepress_setup' ) ) :
 		);
 	}
 endif;
-add_action( 'after_setup_theme', 'exepress_setup' );
+add_action( 'after_setup_theme', 'themezone_setup' );

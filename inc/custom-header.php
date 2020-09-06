@@ -8,39 +8,39 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package eXePress
+ * @package themezone
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses exepress_header_style()
+ * @uses themezone_header_style()
  */
-function exepress_custom_header_setup() {
+function themezone_custom_header_setup() {
 	add_theme_support(
 		'custom-header',
 		apply_filters(
-			'exepress_custom_header_args',
+			'themezone_custom_header_args',
 			array(
 				'default-image'      => '',
 				'default-text-color' => '000000',
 				'width'              => 1000,
 				'height'             => 250,
 				'flex-height'        => true,
-				'wp-head-callback'   => 'exepress_header_style',
+				'wp-head-callback'   => 'themezone_header_style',
 			)
 		)
 	);
 }
-add_action( 'after_setup_theme', 'exepress_custom_header_setup' );
+add_action( 'after_setup_theme', 'themezone_custom_header_setup' );
 
-if ( ! function_exists( 'exepress_header_style' ) ) :
+if ( ! function_exists( 'themezone_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see exepress_custom_header_setup().
+	 * @see themezone_custom_header_setup().
 	 */
-	function exepress_header_style() {
+	function themezone_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*

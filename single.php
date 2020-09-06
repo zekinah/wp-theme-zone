@@ -4,12 +4,12 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package eXePress
+ * @package themezone
  */
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 get_header();
-$container = get_theme_mod( 'exepress_container_type' );
+$container = get_theme_mod( 'themezone_container_type' );
 ?>
 <div class="wrapper" id="archive-wrapper">
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
@@ -23,8 +23,8 @@ $container = get_theme_mod( 'exepress_container_type' );
 
 					the_post_navigation(
 						array(
-							'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'exepress' ) . '</span> <span class="nav-title">%title</span>',
-							'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'exepress' ) . '</span> <span class="nav-title">%title</span>',
+							'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'themezone' ) . '</span> <span class="nav-title">%title</span>',
+							'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'themezone' ) . '</span> <span class="nav-title">%title</span>',
 						)
 					);
 					// If comments are open or we have at least one comment, load up the comment template.
