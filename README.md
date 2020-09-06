@@ -1,56 +1,100 @@
 
-WP THEME ZONE
-===
-
-Hi. I'm a starter theme called `_s`, or `underscores`, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
-
-My ultra-minimal CSS might make me look like theme tartare but that means less stuff to get in your way when you're designing your awesome theme. Here are some of the other more interesting things you'll find here:
-
-* A modern workflow with a pre-made command-line interface to turn your project into a more pleasant experience.
-* A just right amount of lean, well-commented, modern, HTML5 templates.
-* A custom header implementation in `inc/custom-header.php`. Just add the code snippet found in the comments of `inc/custom-header.php` to your `header.php` template.
-* Custom template tags in `inc/template-tags.php` that keep your templates clean and neat and prevent code duplication.
-* Some small tweaks in `inc/template-functions.php` that can improve your theming experience.
-* A script at `js/navigation.js` that makes your menu a toggled dropdown on small screens (like your phone), ready for CSS artistry. It's enqueued in `functions.php`.
-* 2 sample layouts in `sass/layouts/` made using CSS Grid for a sidebar on either side of your content. Just uncomment the layout of your choice in `sass/style.scss`.
-Note: `.no-sidebar` styles are automatically loaded.
-* Smartly organized starter CSS in `style.css` that will help you to quickly get your design off the ground.
-* Full support for `WooCommerce plugin` integration with hooks in `inc/woocommerce.php`, styling override woocommerce.css with product gallery features (zoom, swipe, lightbox) enabled.
-* Licensed under GPLv2 or later. :) Use it to make something cool.
-
-Installation
----------------
+# WP THEME ZONE
 
 ### Requirements
 
-`_s` requires the following dependencies:
+__WP Theme Zone__ requires the following dependencies:
 
-- [Node.js](https://nodejs.org/)
 - [Composer](https://getcomposer.org/)
+- [Node.js](https://nodejs.org/)
+- [Gulp](https://gulpjs.com/)
 
-### Setup
+## Installation
+There are several ways to install __WP Theme Zone__. We'll look at three of them: (1) classic install by uploading __WP Theme Zone__ to a WordPress install, and (2) using npm
 
-To start using all the tools that come with `_s`  you need to install the necessary Node.js and Composer dependencies :
+### Classic install
+- Download or clone this repository from Github
+- IMPORTANT: If you download it from GitHub make sure you rename the "wp-theme-zone-master.zip" file just to "wp-theme-zone.zip" or you might have problems using child themes!
+- Upload it into your WordPress installation theme subfolder: `/wp-content/themes/`
+- Login to your WordPress backend
+- Go to Appearance → Themes
+- Activate the __WP Theme Zone__
 
-```sh
-$ composer install
-$ npm install
+### npm install
+- Open your terminal
+- Change to the directory where you want to add __WP Theme Zone__
+- Type `npm install wp-theme-zone`
+
+## Developing With npm, Gulp and SASS and Browser Sync
+
+### Installing Dependencies
+- Make sure you have installed Node.js and Browser-Sync (optional) on your computer globally
+- Then open your terminal and browse to the location of your __WP Theme Zone__ copy
+- Run: `$ npm install` : install the dependencies.
+- Run: `$ gulp copy-assets` : Copy all needed dependency assets files from node_modules to theme's /js, /scss and /fonts folder. Run this task after npm update.
+
+### Running
+To work with and compile your Sass files on the fly start:
+
+- `$ gulp watch`
+
+Or, to run with Browser-Sync:
+
+- First change the browser-sync options to reflect your environment in the file `/gulpconfig.json` in the beginning of the file:
+```javascript
+{
+    "browserSyncOptions" : {
+        "proxy": "localhost/theme_test/", // <----- CHANGE HERE
+        "notify": false
+    },
+    ...
+};
 ```
+- then run: `$ gulp watch-bs`
 
 ### Available CLI commands
 
-`_s` comes packed with CLI commands tailored for WordPress theme development :
+`Wp-theme-zone` comes packed with CLI commands tailored for WordPress theme development :
 
-- `composer lint:wpcs` : checks all PHP files against [PHP Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/php/).
-- `composer lint:php` : checks all PHP files for syntax errors.
-- `composer make-pot` : generates a .pot file in the `language/` directory.
-- `npm run compile:css` : compiles SASS files to css.
-- `npm run compile:rtl` : generates an RTL stylesheet.
-- `npm run watch` : watches all SASS files and recompiles them to css when they change.
-- `npm run lint:scss` : checks all SASS files against [CSS Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/css/).
-- `npm run lint:js` : checks all JavaScript files against [JavaScript Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/javascript/).
-- `npm run bundle` : generates a .zip archive for distribution, excluding development and system files.
+- `gulp watch` : automize compiling the custom css on the `wp-theme-zone/sass/theme/_theme.scss` with the existing css. 
+- `gulp compile` : manual compiling the custom css on the `wp-theme-zone/sass/theme/_theme.scss` with the existing css. 
+- `gulp watch-bs` : reloads page automatically on your browser.
 
-Now you're ready to go! The next step is easy to say, but harder to do: make an awesome WordPress theme. :)
+## Confused by All the CSS and Sass Files?
 
-Good luck!
+Some basics about the Sass and CSS files that come with __WP Theme Zone__:
+- The theme itself uses the `/style.css`file only to identify the theme inside of WordPress. The file is not loaded by the theme and does not include any styles.
+- The `/css/theme.css` and its minified little brother `/css/theme.min.css` file(s) provides all styles. It is composed of five different SCSS sets and one variable file at `/sass/theme.scss`:
+
+ ```
+ // 1. Add your variables into this file. Also add variables to overwrite Bootstrap or __WP Theme Zone__ variables here
+ @import "theme/theme_variables"; 
+ // 2. All the Bootstrap stuff - Don´t edit this! 
+ @import "../src/bootstrap-sass/assets/stylesheets/bootstrap";  
+ // 3. Some basic WordPress stylings and needed styles to combine Boostrap and WP Theme Zone
+ @import "themezone/themezone"; 
+ // 4. Font Awesome Icon styles
+ @import "../src/fontawesome/scss/font-awesome"; 
+ // Any additional imported files //
+ // 5. Add your styles into this file
+ @import "theme/theme";
+ ```
+
+- Don’t edit the number 2-4 files/filesets listed above or you won’t be able to update __WP Theme Zone__ without overwriting your own work!
+- Your design goes into: `/sass/theme`.
+  - Add your styles to the `/sass/theme/_theme.scss` file
+  - And your variables to the `/sass/theme/_theme_variables.scss`
+  - Or add other .scss files into it and `@import` it into `/sass/theme/_theme.scss`.
+
+## Acknowledgment
+Thank you for the third party and libraries that is used into this wordpress theme.
+* [Underscores](https://underscores.me/) - based theme
+* [Bootstrap](https://getbootstrap.com/)
+* [Fontawesome](https://fontawesome.com/)
+
+## Contributor
+
+* [Zekinah Lecaros](https://github.com/zekinah) - *main author*
+
+## About Primeview
+ [Primeview](https://www.primeview.com) is Phoenix, Arizona's Leading Digital Marketing and Web Design Firm with complete lead-generating Internet Solutions. 
