@@ -5,6 +5,9 @@
  *
  * @package themezone
  */
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 if ( ! class_exists( 'Themezone' ) ){
 
     class Themezone
@@ -58,8 +61,6 @@ if ( ! class_exists( 'Themezone' ) ){
             $title = array(
                 'themezone'	=> 'Theme Zone',
                 'dashboard'	=> __( 'Dashboard', 'themezone' ),
-                'installplugin'	=> __( 'Install Plugins', 'themezone' ),
-                'support'	=> __( 'Support', 'themezone' ),
                 'options'	=> __( 'ThemeZone Options', 'themezone' ),	// TMP
             );
     
@@ -86,39 +87,12 @@ if ( ! class_exists( 'Themezone' ) ){
                 'themezone',
                 array( $this, 'zone_option_page' )
             );
-        
-            add_submenu_page(
-                'themezone',
-                $title['installplugin'],
-                $title['installplugin'],
-                'edit_theme_options',
-                'themezone-plugin',
-                array(&$this, 'zone_option_plugin')
-            );
-
-            add_submenu_page(
-                'themezone',
-                $title['support'],
-                $title['support'],
-                'edit_theme_options',
-                'themezone-support',
-                array(&$this, 'zone_option_support')
-            );
         }
 
         public function zone_option_page() {
             require THEME_ZONE_URI . '/templates/dashboard.php';
         }
 
-        public function zone_option_plugin() {
-            require THEME_ZONE_URI . '/templates/installplugin.php';
-        }
-
-        public function zone_option_support() {
-            require THEME_ZONE_URI . '/templates/support.php';
-        }
-
-    
     }
 }
     

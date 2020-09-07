@@ -49,16 +49,23 @@ $requireFiles = array(
 );
 
 foreach ($requireFiles as $file) {
-	require THEME_DIR . '/inc' . $file;
+	require_once THEME_DIR . '/inc' . $file;
 }
 
 /** 
- * Initialize admininstrator options
+ * Dashboard
 */
-require THEME_ZONE_URI . '/class-themezone.php';
+if( is_admin() ){
+	/** 
+	 * Initialize admininstrator options
+	*/
+	require_once THEME_ZONE_URI . '/class-themezone.php';
+	require_once THEME_ZONE_URI . '/class-themezone-tgmpa.php';
+	require_once THEME_ZONE_URI . '/class-themezone-support.php';
 
-function run_theme_zone() {
-	$theme = new Themezone();
-	$theme->run();
+	function run_theme_zone() {
+		$theme = new Themezone();
+		$theme->run();
+	}
+	run_theme_zone();
 }
-run_theme_zone();
