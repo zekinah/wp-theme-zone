@@ -11,15 +11,25 @@
  */ 
 defined( 'ABSPATH' ) || exit;
 
+define( 'THEME_DIR', get_template_directory() );
+define( 'THEME_URI', get_template_directory_uri() );
+
+
+// Get the theme data.
+$the_theme     = wp_get_theme();
+$theme_name    = $the_theme->get( 'Name' );
+$theme_version = $the_theme->get( 'Version' );
+
 /**
- * Currently theme version.
+ * Currently theme name and version.
  */
-define( 'THEME_ZONE_VERSION', '1.0.0' );
+define( 'THEME_NAME', $theme_name );
+define( 'THEME_VERSION', $theme_version );
 
 /**
  * Theme Zone Url Administrator
  */
-define('THEME_ZONE_URI', get_template_directory() .'/themezone-options/');
+define('THEME_ZONE_URI', THEME_DIR .'/themezone-options/');
 
 /** 
  * Required Files Array Definition.
@@ -35,11 +45,11 @@ $requireFiles = array(
 	'/customizer.php', 					// Customizer additions.
 	'/custom-header.php',				// Initialize Custom header
 	'/class-wp-bootstrap-navwalker.php',    // Load custom WordPress nav walker.
-	//'/woocommerce.php',					// Initialize Custom functions/templates for WooCommerce
+	//'/woocommerce.php',					// Uncomment this if the woocommerce installed it will initialize Custom functions/templates for WooCommerce
 );
 
 foreach ($requireFiles as $file) {
-	require get_template_directory() . '/inc' . $file;
+	require THEME_DIR . '/inc' . $file;
 }
 
 /** 

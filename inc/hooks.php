@@ -23,7 +23,6 @@ if ( ! function_exists( 'themezone_add_site_info' ) ) {
 	 * Add site info content.
 	 */
 	function themezone_add_site_info() {
-		$the_theme = wp_get_theme();
 
 		$site_info = sprintf(
 			'<a href="%1$s">%2$s</a><span class="sep"> | </span>%3$s(%4$s)',
@@ -36,13 +35,13 @@ if ( ! function_exists( 'themezone_add_site_info' ) ) {
 			sprintf( // WPCS: XSS ok.
 				/* translators: 1: Theme name, 2: Theme author */
 				esc_html__( 'Theme: %1$s by %2$s.', 'themezone' ),
-				$the_theme->get( 'Name' ),
+				THEME_NAME,
 				'<a href="' . esc_url( __( 'http://themezone.com', 'themezone' ) ) . '">primeview.com</a>'
 			),
 			sprintf( // WPCS: XSS ok.
 				/* translators: Theme version */
 				esc_html__( 'Version: %1$s', 'themezone' ),
-				$the_theme->get( 'Version' )
+				THEME_VERSION
 			)
 		);
 

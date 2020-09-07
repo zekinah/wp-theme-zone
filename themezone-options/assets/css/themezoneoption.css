@@ -1,0 +1,24 @@
+/**
+ * Themezone Administrator CSS
+ */
+.zn-title {
+    display: inline-block;
+}
+.zn-version {
+    font-size: 12px;
+    font-weight: normal;
+    color: #7a919e;
+    margin: 10px 0;
+    line-height: 1.7;
+    max-width: 840px;
+}
+.zn-title-short {
+    font-size: 18px;
+    display: table;
+    padding-right: 50px;
+    padding-left: 3px;
+    padding-bottom: 3px;
+}
+.zn-title-sub {
+    font-size: 18px;
+}

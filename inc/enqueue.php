@@ -13,17 +13,15 @@ if ( ! function_exists( 'themezone_scripts' ) ) {
 	 * Load theme's JavaScript and CSS sources.
 	 */
 	function themezone_scripts() {
-		// Get the theme data.
-		$the_theme     = wp_get_theme();
-		$theme_version = $the_theme->get( 'Version' );
 
-		$css_version = $theme_version . '.' . filemtime( get_template_directory() . '/css/theme.min.css' );
-		wp_enqueue_style( 'themezone-styles', get_template_directory_uri() . '/css/theme.min.css', array(), $css_version );
+		$css_version = THEME_VERSION . '.' . filemtime( THEME_DIR . '/css/theme.min.css' );
+		wp_enqueue_style( 'themezone-styles', THEME_URI . '/css/theme.min.css', array(), $css_version );
 
 		wp_enqueue_script( 'jquery' );
 
-		$js_version = $theme_version . '.' . filemtime( get_template_directory() . '/js/theme.min.js' );
-		wp_enqueue_script( 'themezone-scripts', get_template_directory_uri() . '/js/theme.min.js', array(), $js_version, true );
+		$js_version = THEME_VERSION . '.' . filemtime( THEME_DIR . '/js/theme.min.js' );
+		wp_enqueue_script( 'themezone-scripts', THEME_URI . '/js/theme.min.js', array(), $js_version, true );
+
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}

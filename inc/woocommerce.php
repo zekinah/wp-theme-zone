@@ -46,7 +46,7 @@ add_action( 'after_setup_theme', 'themezone_woocommerce_setup' );
  * @return void
  */
 function themezone_woocommerce_scripts() {
-	wp_enqueue_style( 'themezone-woocommerce-style', get_template_directory_uri() . '/css/woocommerce.css', array(), themezone_VERSION );
+	wp_enqueue_style( 'themezone-woocommerce-style', THEME_URI . '/css/woocommerce.css', array(), THEME_VERSION );
 
 	$font_path   = WC()->plugin_url() . '/assets/fonts/';
 	$inline_font = '@font-face {

@@ -4,6 +4,14 @@
  *
  * @package    themezone
  */
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
 ?>
+<div id="zn-dashboard" class="wrap">
 
-<h2>ThemeZone</h2>
+    <?php include_once THEME_ZONE_URI . '/templates/partials/header.php'; ?>
+
+    <div class="dashboard-tab register">
+
+	</div>
+</div>

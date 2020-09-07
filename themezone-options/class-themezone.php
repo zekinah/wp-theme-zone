@@ -9,22 +9,54 @@ if ( ! class_exists( 'Themezone' ) ){
 
     class Themezone
     {
+        /**
+         * Initialize the class and set its properties.
+         *
+         */
         public function __construct(){
-            if ( defined( 'THEME_ZONE_VERSION' ) ) {
-                $this->version = THEME_ZONE_VERSION;
+            if ( defined( 'THEME_VERSION' ) ) {
+                $this->version = THEME_VERSION;
             } else {
                 $this->version = '1.0.0';
             }
-            $this->theme_name = 'theme-zone';
+
+            if ( defined( 'THEME_NAME' ) ) {
+                $this->theme_name = THEME_NAME;
+            } else {
+                $this->theme_name = 'WP Theme Zone';
+            }
+
+            $this->enqueue_styles();
+            $this->enqueue_scripts();
         }
 
         public function run() {
+
             add_action('admin_menu', array(&$this, 'theme_zone_option'));
         }
 
+        /**
+         * Register the stylesheets for the admin area.
+         *
+         */
+        public function enqueue_styles(){
+            wp_enqueue_style( 'themezone-dashboard', THEME_URI. '/themezone-options/assets/css/themezoneoption.css', array(), $this->version );
+        }
+
+        /**
+         * Register the JavaScript for the admin area.
+         *
+         */
+        public function enqueue_scripts(){
+            wp_enqueue_script( 'themezone-dashboard', THEME_URI. '/themezone-options/assets/js/themezoneoption.js', array('jquery'), $this->version );
+        }
+
+        /**
+         * Theme Options Page
+         */
         public function theme_zone_option() {
             $title = array(
-                'themezone'	=> 'ThemeZone',
+                'themezone'	=> 'Theme Zone',
                 'dashboard'	=> __( 'Dashboard', 'themezone' ),
                 'installplugin'	=> __( 'Install Plugins', 'themezone' ),
                 'support'	=> __( 'Support', 'themezone' ),
@@ -79,11 +111,11 @@ if ( ! class_exists( 'Themezone' ) ){
         }
 
         public function zone_option_plugin() {
-
+            require THEME_ZONE_URI . '/templates/installplugin.php';
         }
 
         public function zone_option_support() {
-
+            require THEME_ZONE_URI . '/templates/support.php';
         }
 
     
