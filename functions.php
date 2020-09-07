@@ -59,9 +59,15 @@ if( is_admin() ){
 	/** 
 	 * Initialize admininstrator options
 	*/
-	require_once THEME_ZONE_URI . '/class-themezone.php';
-	require_once THEME_ZONE_URI . '/class-themezone-tgmpa.php';
-	require_once THEME_ZONE_URI . '/class-themezone-support.php';
+	$adminrequireFiles = array(
+		'/class-themezone.php',				// Initialize theme dashboard.
+		'/class-themezone-tgmpa.php',       // Loads Recommended Plugins.
+		'/class-themezone-support.php',     // Manual and Support.
+	);
+	
+	foreach ($adminrequireFiles as $adminfile) {
+		require_once THEME_ZONE_URI . $adminfile;
+	}
 
 	function run_theme_zone() {
 		$theme = new Themezone();

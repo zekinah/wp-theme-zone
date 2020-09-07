@@ -31,6 +31,7 @@ if ( ! class_exists( 'Themezone' ) ){
 
             $this->enqueue_styles();
             $this->enqueue_scripts();
+            $this->zone_option_menu();
         }
 
         public function run() {
@@ -43,7 +44,9 @@ if ( ! class_exists( 'Themezone' ) ){
          *
          */
         public function enqueue_styles(){
-            wp_enqueue_style( 'themezone-dashboard', THEME_URI. '/themezone-options/assets/css/themezoneoption.css', array(), $this->version );
+            wp_enqueue_style( 'jquery-ui-core' );
+            wp_register_style( 'themezone-option-css', THEME_URI. '/themezone-options/assets/css/themezoneoption.css', array(), $this->version );
+            wp_enqueue_style( 'themezone-option-css' );
         }
 
         /**
@@ -51,11 +54,11 @@ if ( ! class_exists( 'Themezone' ) ){
          *
          */
         public function enqueue_scripts(){
-            wp_enqueue_script( 'themezone-dashboard', THEME_URI. '/themezone-options/assets/js/themezoneoption.js', array('jquery'), $this->version );
+            wp_enqueue_script( 'themezone-option-js', THEME_URI. '/themezone-options/assets/js/themezoneoption.js', array('jquery'), $this->version );
         }
 
         /**
-         * Theme Options Page
+         * Dashboard Page
          */
         public function theme_zone_option() {
             $title = array(
@@ -90,7 +93,66 @@ if ( ! class_exists( 'Themezone' ) ){
         }
 
         public function zone_option_page() {
+            $list_menu = $this->zone_option_menu();
+            $list_sections = $this->zone_option_section();
             require THEME_ZONE_URI . '/templates/dashboard.php';
+        }
+
+        /**
+         * Theme Options Page
+         */
+        public function zone_option_menu() {
+            // Navigation elements
+            $menu = array(
+
+                // Custom CSS, JS --------------------------------------------
+                'custom' => array(
+                    'title' 	=> __('Custom CSS & JS', 'zn-opts'),
+                    'sections' 	=> array( 'css', 'js' ),
+                ),
+
+            );
+
+            return $menu;
+        }
+
+        public function zone_option_section() {
+            $sections = array();
+            // Custom CSS & JS ========================================================================
+
+            // CSS --------------------------------------------
+            $sections['css'] = array(
+                'title' => __('CSS', 'zn-opts'),
+                'fields' => array(
+
+                    array(
+                        'id' 		=> 'custom-css',
+                        'type' 		=> 'textarea',
+                        'title' 	=> __('Custom CSS', 'zn-opts'),
+                        'sub_desc' 	=> __('Paste your custom CSS code here', 'zn-opts'),
+                        'class' 	=> 'custom-css',
+                    ),
+
+                ),
+            );
+
+            // JS --------------------------------------------
+            $sections['js'] = array(
+                'title' => __('JS', 'zn-opts'),
+                'fields' => array(
+
+                    array(
+                        'id' 		=> 'custom-js',
+                        'type' 		=> 'textarea',
+                        'title' 	=> __('Custom JS', 'zn-opts'),
+                        'sub_desc' 	=> __('Paste your custom JS code here', 'zn-opts'),
+                        'desc' 		=> __('To use jQuery code wrap it into <strong>jQuery(function($){ ... });</strong>', 'zn-opts'),
+                    ),
+
+                ),
+            );
+
+            return $sections;
         }
 
     }

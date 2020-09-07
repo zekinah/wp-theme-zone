@@ -33,7 +33,7 @@ if ( ! class_exists( 'Themezone_Support' ) ){
         }
 
         /**
-         * Theme Options Page
+         * Dashboard Page
          */
         public function init() {
             $title = array(
