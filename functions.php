@@ -6,12 +6,23 @@
  *
  * @package themezone
  */
-// Exit if accessed directly.
+/**
+ * Exit if accessed directly.
+ */ 
 defined( 'ABSPATH' ) || exit;
+
+/**
+ * Currently theme version.
+ */
+define( 'THEME_ZONE_VERSION', '1.0.0' );
+
+/**
+ * Theme Zone Url Administrator
+ */
+define('THEME_ZONE_URI', get_template_directory() .'/themezone-options/');
+
 /** 
- * 
  * Required Files Array Definition.
- * 
 */
 $requireFiles = array(
 	'/theme-settings.php',				// Initialize theme default settings.
@@ -30,3 +41,14 @@ $requireFiles = array(
 foreach ($requireFiles as $file) {
 	require get_template_directory() . '/inc' . $file;
 }
+
+/** 
+ * Initialize admininstrator options
+*/
+require THEME_ZONE_URI . '/class-themezone.php';
+
+function run_theme_zone() {
+	$theme = new Themezone();
+	$theme->run();
+}
+run_theme_zone();

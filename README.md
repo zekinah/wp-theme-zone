@@ -91,10 +91,8 @@ Thank you for the third party and libraries that is used into this wordpress the
 * [Underscores](https://underscores.me/) - based theme
 * [Bootstrap](https://getbootstrap.com/)
 * [Fontawesome](https://fontawesome.com/)
+* [base64](https://base64.guru/converter/encode/image)
 
 ## Contributor
 
 * [Zekinah Lecaros](https://github.com/zekinah) - *main author*
-
-## About Primeview
- [Primeview](https://www.primeview.com) is Phoenix, Arizona's Leading Digital Marketing and Web Design Firm with complete lead-generating Internet Solutions. 
