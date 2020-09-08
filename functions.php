@@ -59,19 +59,22 @@ if( is_admin() ){
 	/** 
 	 * Initialize admininstrator options
 	*/
-	$adminrequireFiles = array(
-		'/class-themezone.php',				// Initialize theme dashboard.
-		'/class-themezone-tgmpa.php',       // Loads Recommended Plugins.
-		'/class-themezone-support.php',     // Manual and Support.
-	);
-	
-	foreach ($adminrequireFiles as $adminfile) {
-		require_once THEME_ZONE_URI . $adminfile;
-	}
-
 	function run_theme_zone() {
-		$theme = new Themezone();
+		$adminrequireFiles = array(
+			'/class-themezone.php',				// Initialize theme dashboard.
+			'/class-themezone-options.php',		// Collection of Menus and Section
+			'/class-themezone-tgmpa.php',       // Loads Recommended Plugins.
+			'/class-themezone-support.php',     // Manual and Support.
+		);
+		
+		foreach ($adminrequireFiles as $adminfile) {
+			require_once THEME_ZONE_URI . $adminfile;
+		}
+		
+		$themezone_options = new Themezone_Options(); // Execute Themezone_Options
+		$theme = new Themezone($themezone_options);
 		$theme->run();
 	}
+
 	run_theme_zone();
 }

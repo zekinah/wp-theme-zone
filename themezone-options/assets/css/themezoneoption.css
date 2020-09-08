@@ -19,16 +19,16 @@
 /* ------------------------- #zn-aside -------------------------- */
 #zn-aside { width:230px; float:left;}
 
-#zn-wrapper .zn-logo { background:#23282d url(../images/themezone-white@192x192.png) no-repeat center; height:155px; width:230px;}
+#zn-wrapper .zn-logo { background:#1b2229 url(../images/themezone-white@192x192.png) no-repeat center; height:75px; width:230px;background-size: 25%;}
 
-#zn-wrapper ul.zn-menu { width:100%; margin:0; padding:0; background:#34495e;}
+#zn-wrapper ul.zn-menu { width:100%; margin:0; padding:0; background:#0073aa;}
 #zn-wrapper ul.zn-menu li { list-style:none; padding:0; margin:0; }
 #zn-wrapper ul.zn-menu > li.active { }
 
 #zn-wrapper ul.zn-menu li a { color:#fff; text-decoration:none; display:block;}
 #zn-wrapper ul.zn-menu > li > a { font-size:14px; font-weight:400; line-height:44px; }
 #zn-wrapper ul.zn-menu > li.active > a,
-#zn-wrapper ul.zn-menu > li > a:hover { background: #2f4052;}
+#zn-wrapper ul.zn-menu > li > a:hover { background: #0071a1;}
 
 #zn-wrapper ul.zn-menu > li > a > .icon { display:block; width:20px; height:20px; margin:12px 14px 12px 18px; float:left; clear:left; background:url(../img/ico-nav.png); }
 
@@ -96,7 +96,7 @@
 #zn-wrapper ul.zn-menu > li.zn-menu-li-import > a:hover > .icon,
 #zn-wrapper ul.zn-menu > li.zn-menu-li-import.active > a > .icon { background-position: -20px -300px; }
 
-#zn-wrapper ul.zn-menu li ul.zn-submenu { display:none; padding:0 0 10px; background:#2f4052;}
+#zn-wrapper ul.zn-menu li ul.zn-submenu { display:none; padding:0 0 10px; background:#32373c;}
 
 #zn-wrapper ul.zn-menu li ul.zn-submenu li a { font-size:14px; line-height:32px; color:#b8c8d9; border-left:5px solid transparent; padding:0 20px 0 47px; background:url(../img/ico-sub.png) 190px center no-repeat;}
 #zn-wrapper ul.zn-menu li ul.zn-submenu li.active a,
@@ -113,11 +113,11 @@
 #zn-wrapper a.zn-opts-upload:hover { background:#f0f5f5;}
 
 #zn-wrapper a.btn-green { color:#fff; border-color: #007cba; background: #0073aa;}
-#zn-wrapper a.btn-green:hover { background:#0b3b52;}
+#zn-wrapper a.btn-green:hover { background:#0071a1;}
 
 .zn-popup-save { display: block; cursor:pointer; font-size: 14px; text-decoration: none; font-weight: 600; color:#fff !important; padding: 0 17px; border: 2px solid #007cba; background:#0073aa; height:37px; line-height:33px;}
 #zn-popup .zn-popup-save { height:33px;}
-.zn-popup-save:hover { background:#0b3b52;}
+.zn-popup-save:hover { background:#0071a1;}
 
 #zn-wrapper a.zn-btn-close { display: block; width: 37px; height:37px;  text-indent: -9999px; background: #2f4052 url(../img/ico-delete.png) no-repeat center;}
 #zn-wrapper a.zn-btn-close:hover { background-color: #FB5656;}
@@ -126,7 +126,7 @@
 /* ------------------------- #zn-main -------------------------- */
 #zn-main { margin-left:230px;}
 
-.zn-header { height:75px; background:#0073aa;}
+.zn-header { height:75px; background:#23282d;}
 .zn-header .zn-popup-save { float:right; margin:19px 20px 0 0;}
 
 .zn-header .zn-buttons { float:right; border-left:1px solid #48c9b0; height:100%; padding:0 10px; position:relative;}

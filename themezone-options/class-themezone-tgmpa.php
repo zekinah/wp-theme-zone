@@ -161,7 +161,7 @@ if ( ! class_exists( 'Themezone_Tgmpa' ) ){
                     'name'      => 'Zone Ratings', //repo name
                     'slug'      => 'zone-ratings', //url
                     'source'    => '/zekinah/Zone-Ratings/archive/master.zip',
-                    'external_url' => 'https://github.com/zekinah/Zone-Ratings',
+                    'external_url' => 'https://github.com/zekinah/zone-ratings',
                     'version'	=> '1.9.0',
                     'required'  => false,
                     'force_activation' => false,
@@ -173,6 +173,26 @@ if ( ! class_exists( 'Themezone_Tgmpa' ) ){
                     'source'    => '/zekinah/Zone-Cookie/archive/master.zip',
                     'external_url' => 'https://wordpress.org/plugins/zone-cookie/',
                     'version'	=> '1.0.3',
+                    'required'  => false,
+                    'force_activation' => false,
+                    'force_deactivation' => false
+                ),
+                array(
+                    'name'      => 'Zone IO Tab', //repo name
+                    'slug'      => 'zone-io-tab', //url
+                    'source'    => '/zekinah/zone-io-tab/archive/master.zip',
+                    'external_url' => 'https://github.com/zekinah/zone-io-tab',
+                    'version'	=> '1.0.0',
+                    'required'  => false,
+                    'force_activation' => false,
+                    'force_deactivation' => false
+                ),
+                array(
+                    'name'      => 'Zone IO Slider', //repo name
+                    'slug'      => 'zone-io-slider', //url
+                    'source'    => '/zekinah/zone-io-slider2/archive/master.zip',
+                    'external_url' => 'https://github.com/zekinah/zone-io-slider2',
+                    'version'	=> '1.0.0',
                     'required'  => false,
                     'force_activation' => false,
                     'force_deactivation' => false

@@ -14,6 +14,7 @@ defined( 'ABSPATH' ) || exit;
     <div class="dashboard-tab register">
         <div id="zn-wrapper">
             <form method="post" action="options.php" enctype="multipart/form-data" id="zn-form-wrapper">
+                <?php settings_fields('themezone_group'); ?>
                 <div id="zn-aside">
                     <div class="zn-logo"></div>
                     <ul class="zn-menu">
@@ -35,17 +36,17 @@ defined( 'ABSPATH' ) || exit;
                         ?>
                     </ul>
 
-                    <div class="zn-theme-version">'<?= __('Theme Version', 'zn-opts') .' <span>'. THEME_VERSION .'</span>'; ?></div>
+                    <div class="zn-theme-version"><?= __('Theme Version', 'zn-opts') .' <span>'. THEME_VERSION .'</span>'; ?></div>
                 </div>
 
                 <div id="zn-main">
 
                     <div class="zn-header">
-                        <input type="submit" name="submit" value="<?=__('Save Changes', 'zn-opts'); ?>" class="zn-popup-save" />
+                        <input type="submit" name="submit" value="<?= __('Save Changes', 'zn-opts'); ?>" class="zn-popup-save" />
                     </div>
                     <div class="zn-sections">
                     <?php
-                        foreach($list_sections as $z => $section) {
+                        foreach($list_section as $z => $section) {
                             echo '<div id="'.$z.'-zn-section'.'" class="zn-section">';
                                 do_settings_sections($z.'_section_group');
                                 echo '<div class="zn-sections-footer">';
