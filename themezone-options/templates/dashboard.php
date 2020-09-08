@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
                     <div class="zn-logo"></div>
                     <ul class="zn-menu">
                         <?php
-                        foreach($list_menu as $z => $menu_item) {
+                        foreach($this->menu as $z => $menu_item) {
                             echo '<li class="zn-menu-li zn-menu-li-'. $z .'">';
                             echo '<a href="javascript:void(0);" class="zn-menu-a"><span class="icon"></span>'. $menu_item['title']. '</a>';
                             if( is_array( $menu_item['sections'] ) ) {
@@ -46,7 +46,7 @@ defined( 'ABSPATH' ) || exit;
                     </div>
                     <div class="zn-sections">
                     <?php
-                        foreach($list_section as $z => $section) {
+                        foreach($this->sections as $z => $section) {
                             echo '<div id="'.$z.'-zn-section'.'" class="zn-section">';
                                 do_settings_sections($z.'_section_group');
                                 echo '<div class="zn-sections-footer">';

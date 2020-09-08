@@ -8,6 +8,6 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<h1 class="zn-title">Theme Zone</h1>
+<h1 class="zn-title"><?= $this->theme_name ?></h1>
 <span class="zn-version">v<?= $this->version ?></span>
 <hr class="wp-header-end">

@@ -14,7 +14,6 @@ if ( ! class_exists( 'Themezone_Options' ) ){
     {
         /**
          * Initialize the class and set its properties.
-         *
          */
         public function __construct(){
         }
@@ -45,7 +44,6 @@ if ( ! class_exists( 'Themezone_Options' ) ){
                         'sub_desc' 	=> __('Paste your custom CSS code here', 'zn-opts'),
                         'class' 	=> 'custom-css',
                     ),
-
                 ),
             );
 
@@ -60,7 +58,6 @@ if ( ! class_exists( 'Themezone_Options' ) ){
                         'sub_desc' 	=> __('Paste your custom JS code here', 'zn-opts'),
                         'desc' 		=> __('To use jQuery code wrap it into <strong>jQuery(function($){ ... });</strong>', 'zn-opts'),
                     ),
-
                 ),
             );
 

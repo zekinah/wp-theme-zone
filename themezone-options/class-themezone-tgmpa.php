@@ -17,7 +17,6 @@ if ( ! class_exists( 'Themezone_Tgmpa' ) ){
 
         /**
          * Initialize the class and set its properties.
-         *
          */
         public function __construct(){
 

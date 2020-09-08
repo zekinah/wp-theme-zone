@@ -13,11 +13,18 @@ if ( ! class_exists( 'Themezone' ) ){
     class Themezone
     {
 
+        private $version;
+
+        private $theme_name;
+
         private $options;
+
+        private $menu;
+
+        private $sections;
 
         /**
          * Initialize the class and set its properties.
-         *
          */
         public function __construct(Themezone_Options $options){
             if ( defined( 'THEME_VERSION' ) ) {
@@ -33,18 +40,22 @@ if ( ! class_exists( 'Themezone' ) ){
             }
 
             $this->options = $options;
+            $this->menu = $this->options->zone_option_menu();
+            $this->sections = $this->options->zone_option_section();
 
             $this->enqueue_styles();
             $this->enqueue_scripts();
         }
 
         public function run() {
+            // register wordpress menu
             add_action('admin_menu', array(&$this, 'theme_zone_option'));
+            // register theme setting
+			add_action( 'admin_init', array( &$this, 'register_theme_zone_setting' ) );
         }
 
         /**
          * Register the stylesheets for the admin area.
-         *
          */
         public function enqueue_styles(){
             wp_enqueue_style( 'jquery-ui-core' );
@@ -54,10 +65,11 @@ if ( ! class_exists( 'Themezone' ) ){
 
         /**
          * Register the JavaScript for the admin area.
-         *
          */
         public function enqueue_scripts(){
+
             wp_enqueue_script( 'themezone-option-js', THEME_URI. '/themezone-options/assets/js/themezoneoption.js', array('jquery'), $this->version );
+        
         }
 
         /**
@@ -65,7 +77,7 @@ if ( ! class_exists( 'Themezone' ) ){
          */
         public function theme_zone_option() {
             $title = array(
-                'themezone'	=> 'Theme Zone',
+                'themezone'	=> $this->theme_name,
                 'dashboard'	=> __( 'Dashboard', 'themezone' ),
                 'options'	=> __( 'ThemeZone Options', 'themezone' ),	// TMP
             );
@@ -99,11 +111,81 @@ if ( ! class_exists( 'Themezone' ) ){
          * Theme Options Page
          */
         public function zone_option_page() {
-            $list_menu = $this->options->zone_option_menu();
-            $list_section = $this->options->zone_option_section();
-
             require THEME_ZONE_URI . '/templates/dashboard.php';
         }
+
+        /**
+		 * Register Option for use
+		*/
+		public function register_theme_zone_setting(){
+
+			register_setting('themezone_group', 'themezone');
+
+			foreach($this->sections as $z => $section){
+
+				add_settings_section($z.'_section', $section['title'], array(&$this, 'theme_zone_section_desc'), $z.'_section_group');
+
+				if(isset($section['fields'])){
+
+					foreach($section['fields'] as $fieldk => $field){
+
+						if(isset($field['title'])){
+							$th = (isset($field['sub_desc']))?$field['title'].'<span class="description">'.$field['sub_desc'].'</span>':$field['title'];
+						}else{
+							$th = '';
+						}
+
+						add_settings_field($fieldk.'_field', $th, array(&$this,'theme_zone_field_input'), $z.'_section_group', $z.'_section', $field); // checkbox
+
+					}
+
+				}
+
+			}
+
+        }
+        
+        /**
+		 *  Description output +
+		 */
+		public function theme_zone_section_desc( $section ){
+
+			$id = str_replace( '_section', '', $section['id'] );
+
+			if( isset( $this->sections[$id]['desc'] ) ){
+				echo '<div class="zn-opts-section-desc">'. $this->sections[$id]['desc'] .'</div>';
+			}
+
+		}
+
+
+		/**
+		 * Field output +
+		 */
+		public function theme_zone_field_input( $field ){
+
+			if( isset( $field['type'] ) ){
+
+				$field_class = 'ThemeZone_Options_' .$field['type'];
+
+				if( class_exists( $field_class ) ){
+
+                    require_once( THEME_ZONE_URI .'fields/'. $field['type'] .'/field_'. $field['type'] .'.php' );
+                    
+                    $value = '';
+                    if(get_option($field['id'])) {
+                        $value = get_option($field['id']);
+                    }
+
+					$render = new $field_class( $field, $value, 'themezone' );
+					$render->render();
+
+				}
+
+			}
+
+		}
+
 
     }
 }

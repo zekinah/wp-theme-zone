@@ -14,7 +14,6 @@ if ( ! class_exists( 'Themezone_Support' ) ){
     {
         /**
          * Initialize the class and set its properties.
-         *
          */
         public function __construct(){
             if ( defined( 'THEME_VERSION' ) ) {
