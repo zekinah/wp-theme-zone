@@ -92,7 +92,7 @@ if ( ! class_exists( 'Themezone' ) ){
                 $title['themezone'],
                 'edit_theme_options',
                 'themezone',
-                array( $this, 'zone_option_page' ),
+                array( $this, 'theme_zone_option_page' ),
                 $icon,
                 3
             );
@@ -103,14 +103,14 @@ if ( ! class_exists( 'Themezone' ) ){
                 $title['dashboard'],
                 'edit_theme_options',
                 'themezone',
-                array( $this, 'zone_option_page' )
+                array( $this, 'theme_zone_option_page' )
             );
         }
 
         /**
          * Dashboard HTMl
          */
-        public function zone_option_page() {
+        public function theme_zone_option_page() {
             require THEME_ZONE_URI . '/templates/dashboard.php';
         }
 
@@ -119,7 +119,7 @@ if ( ! class_exists( 'Themezone' ) ){
 		*/
 		public function register_theme_zone_setting(){
 
-			register_setting('themezone_group', 'themezone');
+            register_setting('themezone_group', 'themezone');
 
 			foreach($this->sections as $z => $section){
 
@@ -135,13 +135,13 @@ if ( ! class_exists( 'Themezone' ) ){
 							$th = '';
 						}
 
-						add_settings_field($fieldk.'_field', $th, array(&$this,'theme_zone_field_input'), $z.'_section_group', $z.'_section', $field); // checkbox
+						add_settings_field($fieldk.'_field', $th, array(&$this,'theme_zone_input_field'), $z.'_section_group', $z.'_section', $field); // checkbox
 
 					}
 
 				}
 
-			}
+            }
 
         }
         
@@ -149,20 +149,16 @@ if ( ! class_exists( 'Themezone' ) ){
 		 *  Description output +
 		 */
 		public function theme_zone_section_desc( $section ){
-
 			$id = str_replace( '_section', '', $section['id'] );
-
 			if( isset( $this->sections[$id]['desc'] ) ){
 				echo '<div class="zn-opts-section-desc">'. $this->sections[$id]['desc'] .'</div>';
 			}
-
 		}
-
 
 		/**
 		 * Field output +
 		 */
-		public function theme_zone_field_input( $field ){
+		public function theme_zone_input_field( $field ){
 
 			if( isset( $field['type'] ) ){
 
@@ -173,10 +169,11 @@ if ( ! class_exists( 'Themezone' ) ){
 
                     require_once( THEME_ZONE_URI .'fields/'. $field['type'] .'/field_'. $field['type'] .'.php' );
                     
+                    $settings_value = get_option('themezone');
+
+                    //Get the value
                     $value = '';
-                    if(get_option($field['id'])) {
-                        $value = get_option($field['id']);
-                    }
+                    $value = (array_key_exists($field['id'],$settings_value) ? $settings_value[$field['id']] : '');
 
 					$render = new $field_class( $field, $value, 'themezone' );
 					$render->render();
