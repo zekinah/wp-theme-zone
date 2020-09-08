@@ -15,6 +15,8 @@ defined( 'ABSPATH' ) || exit;
         <div id="zn-wrapper">
             <form method="post" action="options.php" enctype="multipart/form-data" id="zn-form-wrapper">
                 <?php settings_fields('themezone_group'); ?>
+
+
                 <div id="zn-aside">
                     <div class="zn-logo"></div>
                     <ul class="zn-menu">
@@ -26,7 +28,7 @@ defined( 'ABSPATH' ) || exit;
                                 echo '<ul class="zn-submenu">';
                                 foreach( $menu_item['sections'] as $sub_item ){
                                     echo '<li id="'.$sub_item.'-zn-submenu-li" class="zn-submenu-li">';
-                                    echo '<a href="javascript:void(0);" class="zn-submenu-a" data-rel="'.$sub_item.'"><span>'. $list_menu[$sub_item]['title'] .'</span></a>';
+                                    echo '<a href="javascript:void(0);" class="zn-submenu-a" data-rel="'.$sub_item.'"><span>'. $this->sections[$sub_item]['title'] .'</span></a>';
                                     echo '</li>';
                                 }
                                 echo '</ul>';

@@ -1,5 +1,5 @@
 <?php
-class Themezone_Options_textarea extends Themezone{
+class Themezone_Options_textarea extends Themezone {
 
 	/**
 	 * Constructor
@@ -54,7 +54,7 @@ class Themezone_Options_textarea extends Themezone{
 		// echo -----------------------------------------------------
 		echo '<div class="textarea-wrapper '. $class .'">';
 
-			if( strpos( $class, 'sc' ) !== false ){
+			if( strpos( $class, 'sc' ) ){
 
 				echo '<div class="zn-textarea-header">';
 					echo '<div class="zn-sc-add">';

@@ -108,7 +108,7 @@ if ( ! class_exists( 'Themezone' ) ){
         }
 
         /**
-         * Theme Options Page
+         * Dashboard HTMl
          */
         public function zone_option_page() {
             require THEME_ZONE_URI . '/templates/dashboard.php';
@@ -166,9 +166,10 @@ if ( ! class_exists( 'Themezone' ) ){
 
 			if( isset( $field['type'] ) ){
 
-				$field_class = 'ThemeZone_Options_' .$field['type'];
-
-				if( class_exists( $field_class ) ){
+                // Class Name
+                $field_class = 'ThemeZone_Options_' .$field['type'];
+                
+				// if( class_exists( $field_class ) ){
 
                     require_once( THEME_ZONE_URI .'fields/'. $field['type'] .'/field_'. $field['type'] .'.php' );
                     
@@ -180,7 +181,7 @@ if ( ! class_exists( 'Themezone' ) ){
 					$render = new $field_class( $field, $value, 'themezone' );
 					$render->render();
 
-				}
+				// }
 
 			}
 
