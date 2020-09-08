@@ -12,6 +12,6 @@ defined( 'ABSPATH' ) || exit;
     <?php include_once THEME_ZONE_URI . '/templates/partials/header.php'; ?>
 
     <div class="support-tab register">
-
+        <h2>COMING SOON</h2>
 	</div>
 </div>
