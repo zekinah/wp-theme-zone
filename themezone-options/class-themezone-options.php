@@ -24,12 +24,17 @@ if ( ! class_exists( 'Themezone_Options' ) ){
                 // Global
                 'global' => array(
                     'title' 	=> __('Global', 'zn-opts'),
-                    'sections' 	=> array( 'general','hooks' ),
+                    'sections' 	=> array( 'general','copyrights','hooks' ),
                 ),
                 // Social
                 'social' => array(
                     'title' 	=> __('Social', 'zn-opts'),
                     'sections' 	=> array( 'social' ),
+                ),
+                // Addons, Plugins
+                'colors' => array(
+                    'title' 	=> __('Colors', 'zn-opts'),
+                    'sections' 	=> array( 'colors' ),
                 ),
                 // Addons, Plugins
                 'addons-plugins' => array(
@@ -100,6 +105,28 @@ if ( ! class_exists( 'Themezone_Options' ) ){
                 ),
             );
 
+            // Copyrights 
+            $sections['copyrights'] = array(
+                'title' 	=> __('Copyrights', 'zn-opts'),
+                'fields'	=> array(
+
+                    array(
+                        'id' 		=> 'copyright',
+                        'type' 		=> 'textarea',
+                        'title' 	=> __('Copyright', 'zn-opts'),
+                        'sub_desc'	=> __('[copyright]', 'zn-opts'),
+                    ),
+
+                    array(
+                        'id' 		=> 'copyright-developer',
+                        'type' 		=> 'textarea',
+                        'title' 	=> __('Developer', 'zn-opts'),
+                        'sub_desc'	=> __('[developer]', 'zn-opts'),
+                    ),
+
+                ),
+            );
+
             // Hooks 
             $sections['hooks'] = array(
                 'title' 	=> __('Hooks', 'zn-opts'),
@@ -144,6 +171,28 @@ if ( ! class_exists( 'Themezone_Options' ) ){
             $sections['social'] = array(
                 'title' 	=> __( 'General', 'zn-opts' ),
                 'fields' 	=> array(
+                    // Adding Info
+                    array(
+                        'id' 		=> 'contact-info-layout',
+                        'type' 		=> 'info',
+                        'title' 	=> '',
+                        'desc' 		=> __('Contact', 'zn-opts'),
+                        'class' 	=> 'zn-info',
+                    ),
+                    array(
+                        'id' 		=> 'contact-number',
+                        'type' 		=> 'text',
+                        'title' 	=> __('Contact Number', 'zn-opts'),
+                        'sub_desc'	=> __('[zn_contact_number]', 'zn-opts')
+                    ),
+                    // Adding Info
+                    array(
+                        'id' 		=> 'social-info-layout',
+                        'type' 		=> 'info',
+                        'title' 	=> '',
+                        'desc' 		=> __('Social<span>[zn_social_media_all]</span>', 'zn-opts'),
+                        'class' 	=> 'zn-info',
+                    ),
                     array(
                         'id' 		=> 'social-facebook',
                         'type' 		=> 'text',
@@ -208,6 +257,35 @@ if ( ! class_exists( 'Themezone_Options' ) ){
                         'desc' 		=> __('To show Custom Social Icon select Icon and enter Link to the profile page', 'zn-opts'),
                     ),
 
+
+                ),
+            );
+
+            // Colors 
+            $sections['colors'] = array(
+                'title' 	=> __('General', 'zn-opts'),
+                'fields'	=> array(
+
+                    array(
+                        'id' 		=> 'background-header',
+                        'type' 		=> 'color',
+                        'title' 	=> __('Header Background Color', 'zn-opts'),
+                        'std' 		=> '#1e73be',
+                    ),
+
+                    array(
+                        'id' 		=> 'background-page',
+                        'type' 		=> 'color',
+                        'title' 	=> __('Page Background Color', 'zn-opts'),
+                        'std' 		=> '#FFFFFF',
+                    ),
+
+                    array(
+                        'id' 		=> 'background-color',
+                        'type' 		=> 'color',
+                        'title' 	=> __('Footer Background Color', 'zn-opts'),
+                        'std' 		=> '#8E8A89',
+                    ),
 
                 ),
             );
