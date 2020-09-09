@@ -70,7 +70,7 @@ class Themezone_Options_multi_text extends Themezone{
 	 * Enqueue Function.
 	*/
 	function enqueue(){
-		wp_enqueue_script( 'zn-opts-field-multi-text-js', THEME_ZONE_URI .'fields/multi_text/field_multi_text.js', array('jquery'), THEME_VERSION, true );
+		wp_enqueue_script( 'zn-opts-field-multi-text-js', THEME_URI .'fields/multi_text/field_multi_text.js', array('jquery'), THEME_VERSION, true );
 	}
 
 }

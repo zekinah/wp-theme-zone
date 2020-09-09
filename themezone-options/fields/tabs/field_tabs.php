@@ -89,7 +89,7 @@ class Themezone_Options_tabs extends Themezone{
 	 * Enqueue
 	*/
 	function enqueue(){
-		wp_enqueue_script( 'zn-opts-field-tabs-js', THEME_ZONE_URI .'fields/tabs/field_tabs.js', array( 'jquery' ), THEME_VERSION, true );
+		wp_enqueue_script( 'zn-opts-field-tabs-js', THEME_URI .'fields/tabs/field_tabs.js', array( 'jquery' ), THEME_VERSION, true );
 	}
 
 }

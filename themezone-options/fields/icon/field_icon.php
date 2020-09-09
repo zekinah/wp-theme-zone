@@ -496,7 +496,7 @@ class Themezone_Options_icon extends Themezone{
 	 * Enqueue Function.
 	*/
 	function enqueue(){
-		wp_enqueue_script( 'zn-opts-field-icos-js', THEME_ZONE_URI.'fields/icon/field_icon.js', array( 'jquery' ), THEME_VERSION, true );
+		wp_enqueue_script( 'zn-opts-field-icos-js', THEME_URI.'fields/icon/field_icon.js', array( 'jquery' ), THEME_VERSION, true );
 	}
 
 }

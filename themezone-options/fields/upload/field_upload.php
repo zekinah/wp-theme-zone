@@ -77,7 +77,7 @@ class Themezone_Options_upload extends Themezone{
 
 			wp_enqueue_media();
 
-			wp_enqueue_script( 'zn-opts-field-upload-js', THEME_ZONE_URI .'fields/upload/field_upload.js', array( 'jquery' ), THEME_VERSION, true );
+			wp_enqueue_script( 'zn-opts-field-upload-js', THEME_URI .'fields/upload/field_upload.js', array( 'jquery' ), THEME_VERSION, true );
 
       wp_localize_script( 'zn-opts-field-upload-js', 'zn_upload', array( 'url' => $this->url .'fields/upload/blank.png' ) );
     }

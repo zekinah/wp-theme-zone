@@ -60,7 +60,7 @@ class Themezone_Options_color extends Themezone{
 		wp_enqueue_style( 'wp-color-picker' );
 
 		// Include our custom jQuery file with WordPress Color Picker dependency
-		wp_enqueue_script( 'zn-opts-field-color-js', THEME_ZONE_URI .'fields/color/field_color.js', array( 'wp-color-picker' ), THEME_VERSION, true );
+		wp_enqueue_script( 'zn-opts-field-color-js', THEME_URI .'fields/color/field_color.js', array( 'wp-color-picker' ), THEME_VERSION, true );
 
 	}
 

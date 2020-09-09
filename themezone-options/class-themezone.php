@@ -70,6 +70,21 @@ if ( ! class_exists( 'Themezone' ) ){
 
             wp_enqueue_script( 'themezone-option-js', THEME_URI. '/themezone-options/assets/js/themezoneoption.js', array('jquery'), $this->version );
         
+            //Enqueue all of the js of fields
+            foreach($this->sections as $z => $section){
+				if(isset($section['fields'])){
+					foreach($section['fields'] as $fieldk => $field){
+						if(isset($field['type'])){
+							$field_class = 'ThemeZone_Options_'.$field['type'];
+							require_once( THEME_ZONE_URI .'fields/'. $field['type'] .'/field_'. $field['type'] .'.php' );
+							if(class_exists($field_class) && method_exists($field_class, 'enqueue')){
+                                $enqueue = new $field_class( '','','themezone' );
+                                $enqueue->enqueue();
+							}
+						}
+					}
+				}
+			}
         }
 
         /**
