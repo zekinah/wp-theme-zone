@@ -1,7 +1,7 @@
 (function($){
 	
     "use strict";
-    var el = $('.mfn-slider-field');
+    var el = $('.zn-slider-field');
     
     
     // delay
@@ -30,9 +30,9 @@
 		var max = slider.attr('data-max') * 1;
 		
 		if( ! isNumeric(value) || value < min || value > max ){
-			input.closest('.mfn-slider-field').addClass('range-error');
+			input.closest('.zn-slider-field').addClass('range-error');
 		} else {
-			input.closest('.mfn-slider-field').removeClass('range-error');
+			input.closest('.zn-slider-field').removeClass('range-error');
 		}
     }
     
@@ -59,7 +59,7 @@
 				value	: value,
 				slide	: function(event, ui){
 					input.attr( 'value', ui.value );
-					input.closest('.mfn-slider-field').removeClass('range-error');
+					input.closest('.zn-slider-field').removeClass('range-error');
 				}
 			});
 			

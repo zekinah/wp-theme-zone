@@ -1,9 +1,9 @@
 jQuery(document).ready(function($){
 	
-	$('.mfn-icon-select .mfn-icon').click(function(){
+	$('.zn-icon-select .zn-icon').click(function(){
 		
-		var field = $(this).closest('.mfn-icon-field');
-		var input = field.find('.mfn-icon-input');
+		var field = $(this).closest('.zn-icon-field');
+		var input = field.find('.zn-icon-input');
 		
 		var icon = $(this).attr('data-rel');
 		
