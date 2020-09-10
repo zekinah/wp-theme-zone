@@ -72,7 +72,7 @@ class Themezone_Options_radio_img extends Themezone{
 	 * Enqueue
 	 */
 	function enqueue(){
-		wp_enqueue_script( 'zn-opts-field-radio_img-js', THEME_URI .'fields/radio_img/field_radio_img.js', array( 'jquery' ), THEME_VERSION, true );
+		wp_enqueue_script( 'zn-opts-field-radio_img-js', THEME_URI. '/themezone-options/fields/radio_img/field_radio_img.js', array( 'jquery' ), THEME_VERSION, true );
 	}
 
 }

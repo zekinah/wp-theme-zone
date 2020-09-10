@@ -6,6 +6,7 @@ class Themezone_Options_switch extends Themezone{
 	 */
 	function __construct( $field = array(), $value = '', $prefix = false ){
 
+		$this->enqueue();
 		$this->field = $field;
 		$this->value = $value;
 
@@ -65,7 +66,7 @@ class Themezone_Options_switch extends Themezone{
 	 * Enqueue
 	 */
 	function enqueue(){
-		wp_enqueue_script( 'zn-opts-field-switch-js', THEME_URI .'fields/switch/field_switch.js', array('jquery'), THEME_VERSION, true );
+		wp_enqueue_script( 'zn-opts-field-switch-js', THEME_URI .'/themezone-options/fields/switch/field_switch.js', array('jquery'), THEME_VERSION, true );
 	}
 
 }

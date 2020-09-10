@@ -52,7 +52,7 @@ class Themezone_Options_checkbox extends Themezone{
 				$this->value = array();
 			}
 
-			echo '<div class="mfnf-checkbox multi '. $class .'">';
+			echo '<div class="znf-checkbox multi '. $class .'">';
 
 				// FIX | Post Meta Save | All values unchecked
 				echo '<input type="hidden" name="'. $name. '[post-meta]" value="1" checked="checked" />';
