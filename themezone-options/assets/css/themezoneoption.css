@@ -362,7 +362,7 @@
 	box-shadow:-1px 0 0 rgba(255,255,255,0.5);
 }
 .has-switch > div.switch-on{ left:0}
-.has-switch > div.switch-on label{ background-color:#0073aa}
+.has-switch > div.switch-on label{ background-color:#f8f9f9}
 .has-switch input[type=checkbox]{ display:none}
 
 .has-switch span { cursor:pointer; font-size:14px !important; font-weight:600 !important; float:left; height:29px; line-height:19px !important; padding-bottom:6px; padding-top:5px; position:relative; text-align:center; width:50%; z-index:1; margin:0 !important; color:#fff !important;

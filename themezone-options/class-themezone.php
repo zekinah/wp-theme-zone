@@ -75,6 +75,7 @@ if ( ! class_exists( 'Themezone' ) ){
 				if(isset($section['fields'])){
 					foreach($section['fields'] as $fieldk => $field){
 						if(isset($field['type'])){
+                            // Class Name
 							$field_class = 'ThemeZone_Options_'.$field['type'];
 							require_once( THEME_ZONE_URI .'fields/'. $field['type'] .'/field_'. $field['type'] .'.php' );
 							if(class_exists($field_class) && method_exists($field_class, 'enqueue')){
@@ -174,29 +175,20 @@ if ( ! class_exists( 'Themezone' ) ){
 		 * Field output +
 		 */
 		public function theme_zone_input_field( $field ){
-
 			if( isset( $field['type'] ) ){
-
                 // Class Name
                 $field_class = 'ThemeZone_Options_' .$field['type'];
-                
-				// if( class_exists( $field_class ) ){
-
+				if( class_exists( $field_class ) ){
                     require_once( THEME_ZONE_URI .'fields/'. $field['type'] .'/field_'. $field['type'] .'.php' );
-                    
                     $settings_value = get_option('themezone');
-
                     //Get the value
                     $value = '';
                     $value = (array_key_exists($field['id'],$settings_value) ? $settings_value[$field['id']] : '');
-
 					$render = new $field_class( $field, $value, 'themezone' );
 					$render->render();
-
-				// }
+				}
 
 			}
-
 		}
 
 
