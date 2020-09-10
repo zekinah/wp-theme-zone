@@ -20,6 +20,14 @@ $container = get_theme_mod( 'themezone_container_type' );
 	<div class="wrapper" id="wrapper-footer">
 		<div class="<?php echo esc_attr( $container ); ?>">
 			<div class="row">
+				<div class="col-md-6">
+					<?php echo do_shortcode('[copyright]'); ?>
+				</div>
+				<div class="col-md-6">
+					<?php echo do_shortcode('[developer]'); ?>
+				</div>
+			</div>
+			<div class="row">
 				<div class="col-md-12">
 					<footer class="site-footer" id="colophon">
 						<div class="site-info">
