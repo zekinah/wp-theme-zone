@@ -75,10 +75,8 @@ class Themezone_Options_upload extends Themezone{
      */
     function enqueue() {
 
-			wp_enqueue_media();
-
-			wp_enqueue_script( 'zn-opts-field-upload-js', THEME_URI. '/themezone-options/fields/upload/field_upload.js', array( 'jquery' ), THEME_VERSION, true );
-
-      wp_localize_script( 'zn-opts-field-upload-js', 'zn_upload', array( 'url' => $this->url .'fields/upload/blank.png' ) );
+		wp_enqueue_media();
+		wp_enqueue_script( 'zn-opts-field-upload-js', THEME_URI. '/themezone-options/fields/upload/field_upload.js', array( 'jquery' ), THEME_VERSION, true );
+		wp_localize_script( 'zn-opts-field-upload-js', 'zn_upload', array( 'url' => THEME_URI. '/themezone-options/fields/upload/blank.png' ) );
     }
 }
