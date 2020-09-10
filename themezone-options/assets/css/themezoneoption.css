@@ -25,12 +25,12 @@
 #zn-wrapper ul.zn-menu li { list-style:none; padding:0; margin:0; }
 #zn-wrapper ul.zn-menu > li.active { }
 
-#zn-wrapper ul.zn-menu li a { color:#fff; text-decoration:none; display:block;}
+#zn-wrapper ul.zn-menu li a { color:#eeeeee; text-decoration:none; display:block;}
 #zn-wrapper ul.zn-menu > li > a { font-size:14px; font-weight:400; line-height:44px; }
-#zn-wrapper ul.zn-menu > li.active > a,
-#zn-wrapper ul.zn-menu > li > a:hover { background: #0071a1;}
+#zn-wrapper ul.zn-menu > li.active > a { background: #0071a1;}
+#zn-wrapper ul.zn-menu > li > a:hover { background: #191e23;color: #00b9eb;}
 
-#zn-wrapper ul.zn-menu > li > a > .icon { display:block; width:20px; height:20px; margin:12px 14px 12px 18px; float:left; clear:left; background:url(../img/ico-nav.png); }
+#zn-wrapper ul.zn-menu > li > a > .icon { display:block; width:20px; height:20px; margin:12px 14px 12px 18px; float:left; clear:left; background:url(../images/ico-nav.png); }
 
 #zn-wrapper ul.zn-menu > li.zn-menu-li-global > a > .icon { background-position: 0 0; }
 #zn-wrapper ul.zn-menu > li.zn-menu-li-global > a:hover > .icon,
@@ -98,9 +98,9 @@
 
 #zn-wrapper ul.zn-menu li ul.zn-submenu { display:none; padding:0 0 10px; background:#32373c;}
 
-#zn-wrapper ul.zn-menu li ul.zn-submenu li a { font-size:14px; line-height:32px; color:#999999; border-left:5px solid transparent; padding:0 20px 0 47px; background:url(../img/ico-sub.png) 190px center no-repeat;}
+#zn-wrapper ul.zn-menu li ul.zn-submenu li a { font-size:14px; line-height:32px; color:#999999; border-left:5px solid transparent; padding:0 20px 0 47px; background:url(../images/ico-sub.png) 190px center no-repeat;}
 #zn-wrapper ul.zn-menu li ul.zn-submenu li.active a,
-#zn-wrapper ul.zn-menu li ul.zn-submenu li:hover a { color:#ffffff; position:relative; border-left:5px solid #0073aa; background-image:url(../img/ico-sub-active.png);}
+#zn-wrapper ul.zn-menu li ul.zn-submenu li:hover a { color:#ffffff; position:relative; border-left:5px solid #0073aa; background-image:url(../images/ico-sub-active.png);}
 
 #zn-wrapper ul.zn-menu li ul.zn-submenu li a span { display:block; border-bottom:1px solid #445364; }
 #zn-wrapper ul.zn-menu li ul.zn-submenu li.last a span { border-bottom:0;}
@@ -119,7 +119,7 @@
 #zn-popup .zn-popup-save { height:33px;}
 .zn-popup-save:hover { background:#0071a1;}
 
-#zn-wrapper a.zn-btn-close { display: block; width: 37px; height:37px;  text-indent: -9999px; background: #2f4052 url(../img/ico-delete.png) no-repeat center;}
+#zn-wrapper a.zn-btn-close { display: block; width: 37px; height:37px;  text-indent: -9999px; background: #2f4052 url(../images/ico-delete.png) no-repeat center;}
 #zn-wrapper a.zn-btn-close:hover { background-color: #FB5656;}
 
 
@@ -201,7 +201,7 @@
 .zn-field-color{position:relative}
 .zn-field-color input.has-colorpicker{float:left;width:140px!important;margin-top:-4px!important;background:none;filter:none;}
 
-.zn-field-color .wp-picker-container:before{content:"";position:absolute;left:0;top:0;width:63px;height:28px;background:url(../img/transparent.png) repeat left top;-webkit-border-radius:4px;border-radius:4px}
+.zn-field-color .wp-picker-container:before{content:"";position:absolute;left:0;top:0;width:63px;height:28px;background:url(../images/transparent.png) repeat left top;-webkit-border-radius:4px;border-radius:4px}
 
 .zn-field-color .wp-color-result{height:26px;padding-left:40px;background:transparent}
 .zn-field-color .wp-color-result:after{line-height:26px;font-size:12px;padding:0 10px;color:#777;-webkit-border-radius:0 1.5px 1.5px 0;border-radius:0 1.5px 1.5px 0}
@@ -233,7 +233,7 @@
 #zn-wrapper .zn-sections .multi-text-ul li { display:block; width: 338px; height:37px; color:#fff; position:relative; margin:8px 0 5px 0; background: #34495e;}
 #zn-wrapper .zn-sections .multi-text-ul li.multi-text-default { display:none;}
 #zn-wrapper .zn-sections .multi-text-ul li a.multi-text-remove { display:block; position:absolute; top:0; right:0; width: 37px; height:37px; overflow: hidden; text-indent: -9999px; color:#34495e; background: #2f4052;	}
-#zn-wrapper .zn-sections .multi-text-ul li a.multi-text-remove em { width: 37px; height:37px; display: block; overflow: hidden; background:url(../img/ico-delete.png) no-repeat center center;}
+#zn-wrapper .zn-sections .multi-text-ul li a.multi-text-remove em { width: 37px; height:37px; display: block; overflow: hidden; background:url(../images/ico-delete.png) no-repeat center center;}
 #zn-wrapper .zn-sections .multi-text-ul li a:hover.multi-text-remove { background: #FB5656;}
 #zn-wrapper .zn-sections .multi-text-ul li span { color:#fff; line-height:37px; padding:0 17px; font-size:14px; margin:0;}
 
@@ -266,9 +266,9 @@
 .zn-upload-field input.image { float:left;}
 
 #zn-wrapper a.zn-opts-upload { padding: 0 17px 0 42px; display:inline-block; position:relative; margin-bottom:5px; top:1px;}
-#zn-wrapper a.zn-opts-upload span { display: block; width: 16px; height: 16px; overflow: hidden; position: absolute; left: 14px; top:8px; background:url('../img/ico-upload.png') no-repeat;}
+#zn-wrapper a.zn-opts-upload span { display: block; width: 16px; height: 16px; overflow: hidden; position: absolute; left: 14px; top:8px; background:url('../images/ico-upload.png') no-repeat;}
 #zn-wrapper a.zn-opts-upload:hover {}
-#zn-wrapper a.zn-opts-upload-remove {	background:url('../img/ico-cross.png') no-repeat left center; padding-left: 18px; line-height: 38px; text-decoration: none; display:inline-block; margin-left:10px;}
+#zn-wrapper a.zn-opts-upload-remove {	background:url('../images/ico-cross.png') no-repeat left center; padding-left: 18px; line-height: 38px; text-decoration: none; display:inline-block; margin-left:10px;}
 #zn-wrapper a.zn-opts-upload-remove:hover { text-decoration: underline;}
 
 #zn-wrapper img.zn-opts-screenshot { max-width: 339px; max-height:339px; display: block; margin-top: 5px; clear:both; }
@@ -278,8 +278,8 @@
 /* -------------- .znf-upload.multi -------------- */
 #zn-wrapper .znf-upload.multi .upload-input{visibility:hidden;width:1px;margin:0 -7px 0 0;padding:0}
 #zn-wrapper .znf-upload.multi .upload-add{padding:0 17px 0 42px;display:inline-block;position:relative;margin-bottom:5px;top:1px}
-#zn-wrapper .znf-upload.multi .upload-add span{display:block;width:16px;height:16px;overflow:hidden;position:absolute;left:14px;top:8px;background:url(../img/ico-upload.png) no-repeat}
-#zn-wrapper .znf-upload.multi .upload-remove.all{background:url(../img/ico-cross.png) no-repeat left center;padding-left:18px;line-height:38px;text-decoration:none;display:inline-block;margin-left:10px}
+#zn-wrapper .znf-upload.multi .upload-add span{display:block;width:16px;height:16px;overflow:hidden;position:absolute;left:14px;top:8px;background:url(../images/ico-upload.png) no-repeat}
+#zn-wrapper .znf-upload.multi .upload-remove.all{background:url(../images/ico-cross.png) no-repeat left center;padding-left:18px;line-height:38px;text-decoration:none;display:inline-block;margin-left:10px}
 #zn-wrapper .znf-upload.multi .upload-remove.all:hover{text-decoration:underline}
 
 #zn-wrapper .znf-upload.multi .gallery-container{margin-top:20px}
