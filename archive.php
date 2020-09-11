@@ -28,12 +28,12 @@ $container = get_theme_mod( 'themezone_container_type' );
 						/* Start the Loop */
 						while ( have_posts() ) :
 							the_post();
-							get_template_part( 'template-parts/content', get_post_type() );
+							get_template_part( 'template-parts/contents/content', get_post_type() );
 						endwhile;
 						wp_reset_query();
 						echo '<div class="pagination">'.themezone_pagination().'</div>'; // Pagination
 					else :
-						get_template_part( 'template-parts/content', 'none' );
+						get_template_part( 'template-parts/contents/content', 'none' );
 					endif;
 					?>
 				</main><!-- #main -->
