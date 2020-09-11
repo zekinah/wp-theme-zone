@@ -15,7 +15,7 @@ defined( 'ABSPATH' ) || exit;
 $container = get_theme_mod( 'themezone_container_type' );
 ?>
 
-	<?php get_template_part( 'template-parts/widget', 'footerfull' ); ?>
+	<?php get_template_part( 'template-parts/widgets/widget', 'footerfull' ); ?>
 
 	<div class="wrapper" id="wrapper-footer">
 		<div class="<?php echo esc_attr( $container ); ?>">

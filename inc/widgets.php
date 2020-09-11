@@ -118,7 +118,7 @@ if ( ! function_exists( 'themezone_widgets_init' ) ) {
 			array(
 				'name'          => __( 'Top Full', 'themezone' ),
 				'id'            => 'topfull',
-				'description'   => __( 'Full top widget with dynamic grid', 'themezone' ),
+				'description'   => esc_html__( 'Full top widget with dynamic grid', 'themezone' ),
 				'before_widget' => '<div id="%1$s" class="top-full-widget %2$s dynamic-classes">',
 				'after_widget'  => '</div>',
 				'before_title'  => '<h3 class="widget-title">',
@@ -131,7 +131,7 @@ if ( ! function_exists( 'themezone_widgets_init' ) ) {
 			array(
 				'name'          => __( 'Footer Full', 'themezone' ),
 				'id'            => 'footerfull',
-				'description'   => __( 'Full sized footer widget with dynamic grid', 'themezone' ),
+				'description'   => esc_html__( 'Full sized footer widget with dynamic grid', 'themezone' ),
 				'before_widget' => '<div id="%1$s" class="footer-widget %2$s dynamic-classes">',
 				'after_widget'  => '</div>',
 				'before_title'  => '<h3 class="widget-title">',

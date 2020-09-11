@@ -17,6 +17,9 @@ get_header();
 $container = get_theme_mod( 'themezone_container_type' );
 ?>
 <div class="wrapper" id="archive-wrapper">
+
+	<?php get_template_part( 'template-parts/widgets/widget', 'topfull' ); ?>
+
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 		<div class="row">
 			<div class="col-md-8 content-area" id="primary">
