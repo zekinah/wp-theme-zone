@@ -45,11 +45,18 @@ $requireFiles = array(
 	'/customizer.php', 					// Customizer additions.
 	'/custom-header.php',				// Initialize Custom header
 	'/class-wp-bootstrap-navwalker.php',    // Load custom WordPress nav walker.
-	//'/woocommerce.php',					// Uncomment this if the woocommerce installed it will initialize Custom functions/templates for WooCommerce
 );
 
 foreach ($requireFiles as $file) {
-	require_once THEME_DIR . '/inc' . $file;
+	
+}
+
+if ( ! function_exists( 'is_woocommerce_activated' ) ) {
+	function is_woocommerce_activated() {
+		if ( class_exists( 'woocommerce' ) ) {
+			require_once THEME_DIR . '/inc/woocommerce.php'; // Initialize Custom functions/templates for WooCommerce
+		}
+	}
 }
 
 /** 
