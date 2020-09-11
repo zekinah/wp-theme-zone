@@ -44,18 +44,18 @@ $requireFiles = array(
 	'/extras.php',                      // Custom functions that act independently of the theme templates.
 	'/customizer.php', 					// Customizer additions.
 	'/custom-header.php',				// Initialize Custom header
-	'/class-wp-bootstrap-navwalker.php',    // Load custom WordPress nav walker.
+	'/class-wp-bootstrap-navwalker.php'    // Load custom WordPress nav walker
 );
 
 foreach ($requireFiles as $file) {
-	
+	require_once THEME_DIR . '/inc' . $file;
 }
 
 if ( ! function_exists( 'is_woocommerce_activated' ) ) {
 	function is_woocommerce_activated() {
 		if ( class_exists( 'woocommerce' ) ) {
 			require_once THEME_DIR . '/inc/woocommerce.php'; // Initialize Custom functions/templates for WooCommerce
-		}
+		 } 
 	}
 }
 

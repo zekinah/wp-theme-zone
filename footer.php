@@ -24,7 +24,7 @@ $container = get_theme_mod( 'themezone_container_type' );
 					<?php echo do_shortcode('[copyright]'); ?>
 				</div>
 				<div class="col-md-6">
-					<?php echo do_shortcode('[developer]'); ?>
+					<?php echo do_shortcode('[copyright-developer]'); ?>
 				</div>
 			</div>
 			<div class="row">

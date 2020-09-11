@@ -38,3 +38,18 @@ if ( ! function_exists( 'themezone_excerpt' ) ) {
 		return $excerpt;
 	}
 }
+
+// themezone settings
+add_action( 'init', 'themezone_settings' );
+if ( ! function_exists( 'themezone_settings' ) ) {
+	function themezone_settings() {
+		if(is_array(get_option('themezone'))) {
+			$settings_value = get_option('themezone');
+			foreach ($settings_value as $z => $set) {
+				add_shortcode( $z,function() use($set) {
+					return do_shortcode($set);
+				});
+			}
+		}
+	}
+}
