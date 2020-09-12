@@ -14,10 +14,18 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 get_header();
+$thumb = '';
+if(file_exists($thumb)){
+	$image = get_field('banner_image');
+	if ( $image ) : $thumb = $image; endif;	
+}
 $container = get_theme_mod( 'themezone_container_type' );
 ?>
+<header class="entry-header innerpage-header" style="background-image: url('<?= $thumb ?>')" id="header">
+	<?php the_title( '<h1 class="entry-title text-center innerpage-title">', '</h1>' ); ?>
+</header><!-- .entry-header -->
 <div class="wrapper" id="archive-wrapper">
-
+	
 	<?php get_template_part( 'template-parts/widgets/widget', 'topfull' ); ?>
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">

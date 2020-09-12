@@ -26,6 +26,23 @@
 	background-color: $gray-200;
 }
 
+// Copyright
+#wrapper-footer {
+    padding: 20px 5px;
+    font-size: 11px;
+}
+
+// Header Global
+.entry-header {
+	background-color: $gray-500;
+}
+.innerpage-header{
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	padding: 80px 20px;
+}
+
 // Necessary WP classes
 .wp-caption {
 	font-size: inherit;
@@ -40,13 +57,11 @@
 }
 
 .alignleft {
-	display: inline;
 	float: left;
 	margin-right: 1.5em;
 }
 
 .alignright {
-	display: inline;
 	float: right;
 	margin-left: 1.5em;
 }
