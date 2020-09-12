@@ -34,13 +34,18 @@
 
 // Header Global
 .entry-header {
-	background-color: $gray-500;
+	background-color: $gray-200;
 }
 .innerpage-header{
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
 	padding: 80px 20px;
+}
+// Sidebar
+#secondary {
+    background-color: $gray-200;
+    padding: 20px;
 }
 
 // Necessary WP classes
