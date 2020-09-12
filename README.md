@@ -87,6 +87,14 @@ Some basics about the Sass and CSS files that come with __WP Theme Zone__:
   - Or add other .scss files into it and `@import` it into `/sass/theme/_theme.scss`.
   - Also you can use the variables available here `../src/sass/bootstrap4/_variables.scss`. But take note that don't update that file.
 
+
+## Getting the value from Settings
+There are several ways to get the settings of __WP Theme Zone__.
+- By using a function
+``` zn_option_get('option-id') ```
+- By using a shortcode
+``` do_shorcode('option-id') ```
+
 ## Acknowledgment
 Thank you for the third party and libraries that is used into this wordpress theme.
 * [Underscores](https://underscores.me/) - based theme

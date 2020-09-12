@@ -12,7 +12,7 @@
 defined( 'ABSPATH' ) || exit;
 
 $container = get_theme_mod( 'themezone_container_type' );
-$navigation = do_shortcode('[navigation-option]');
+$navigation = zn_option_get('navigation-option');
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>

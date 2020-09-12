@@ -39,7 +39,7 @@ if ( ! function_exists( 'themezone_excerpt' ) ) {
 	}
 }
 
-// themezone settings
+// themezone settings adding to a shortcode and call by option id - Example - do_shortcode('option-id');
 add_action( 'init', 'themezone_settings' );
 if ( ! function_exists( 'themezone_settings' ) ) {
 	function themezone_settings() {
@@ -51,6 +51,17 @@ if ( ! function_exists( 'themezone_settings' ) ) {
 				});
 			}
 		}
+	}
+}
+
+// return a value from themezone settings by option id - Example - zn_option_get('option-id');
+if( ! function_exists( 'zn_option_get' ) ){
+	function zn_option_get( $option_id, $default = null ){
+		$settings_value = get_option('themezone');
+		if( is_array($settings_value) || array_key_exists($option_id,$settings_value)) {
+			return $settings_value[$option_id];
+		}
+		return $default;
 	}
 }
 
