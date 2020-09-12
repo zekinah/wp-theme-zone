@@ -53,20 +53,10 @@ $container = get_theme_mod( 'themezone_container_type' );
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'themezone' ); ?>">
 					<span class="navbar-toggler-icon"></span>
 				</button>
+				
 				<!-- The WordPress Menu goes here -->
-				<?php
-				wp_nav_menu(
-					array(
-						'theme_location' => 'menu-1',
-						'container_class' => 'collapse navbar-collapse',
-						'container_id'    => 'navbarNavDropdown',
-						'menu_class'      => 'navbar-nav ml-auto',
-						'depth'           => 2,
-						'menu_id'        => 'primary-menu',
-						'walker'          => new WP_Bootstrap_Navwalker(),
-					)
-				);
-				?>
+				<?php echo do_shortcode('[themezone_navigation]'); ?>
+
 			<?php if ( 'container' === $container ) : ?>
 			</div><!-- .container -->
 			<?php endif; ?>

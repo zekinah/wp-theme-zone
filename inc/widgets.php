@@ -103,6 +103,19 @@ if ( ! function_exists( 'themezone_widgets_init' ) ) {
 		// sidebar.php
 		register_sidebar(
 			array(
+				'name' => __( 'Site Logo', 'themezone' ),
+				'id' => 'site-logo',
+				'description' => __( 'Display the Site Logo', 'rocket' ),
+				'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+				'after_widget' => '</aside>',
+				'before_title' => '<span class="h4 widget-title">',
+				'after_title' => '</span>',
+			
+				)
+		);
+		// sidebar.php
+		register_sidebar(
+			array(
 				'name'          => esc_html__( 'Sidebar', 'themezone' ),
 				'id'            => 'sidebar-1',
 				'description'   => esc_html__( 'Add widgets here.', 'themezone' ),

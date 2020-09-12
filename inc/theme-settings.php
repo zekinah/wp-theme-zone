@@ -53,3 +53,22 @@ if ( ! function_exists( 'themezone_settings' ) ) {
 		}
 	}
 }
+
+// themezone settings
+add_shortcode( 'themezone_navigation', 'themezone_navigation' );
+if ( ! function_exists( 'themezone_navigation' ) ) {
+	function themezone_navigation(){
+		$nav = wp_nav_menu(
+				array(
+					'theme_location' => 'menu-1',
+					'container_class' => 'collapse navbar-collapse',
+					'container_id'    => 'navbarNavDropdown',
+					'menu_class'      => 'navbar-nav ml-auto',
+					'depth'           => 2,
+					'menu_id'        => 'primary-menu',
+					'walker'          => new WP_Bootstrap_Navwalker(),
+				)
+			);
+		return $nav;
+	}
+}
