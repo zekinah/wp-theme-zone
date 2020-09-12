@@ -43,8 +43,7 @@ $requireFiles = array(
 	'/hooks.php',                       // Custom hooks.
 	'/extras.php',                      // Custom functions that act independently of the theme templates.
 	'/customizer.php', 					// Customizer additions.
-	'/custom-header.php',				// Initialize Custom header
-	'/class-wp-bootstrap-navwalker.php'    // Load custom WordPress nav walker
+	'/libs/class-wp-bootstrap-navwalker.php'    // Load custom WordPress nav walker
 );
 
 foreach ($requireFiles as $file) {

@@ -85,7 +85,7 @@ Some basics about the Sass and CSS files that come with __WP Theme Zone__:
   - Add your styles to the `/sass/theme/_theme.scss` file
   - And your variables to the `/sass/theme/_theme_variables.scss`
   - Or add other .scss files into it and `@import` it into `/sass/theme/_theme.scss`.
-  - Also you can use the variables available here `../src/sass/bootstrap4/_variables.scss`. But take note that don't update that file.
+  - Also you can use the variables available here `../src/sass/bootstrap4/_variables.scss`. But take note that don't edit that file.
 
 
 ## Theme Setting Hooks
