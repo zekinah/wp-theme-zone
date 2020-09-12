@@ -70,11 +70,11 @@ Some basics about the Sass and CSS files that come with __WP Theme Zone__:
  // 1. Add your variables into this file. Also add variables to overwrite Bootstrap or __WP Theme Zone__ variables here
  @import "theme/theme_variables"; 
  // 2. All the Bootstrap stuff - Don´t edit this! 
- @import "../src/bootstrap-sass/assets/stylesheets/bootstrap";  
+ @import "assets/bootstrap4";  
  // 3. Some basic WordPress stylings and needed styles to combine Boostrap and WP Theme Zone
  @import "themezone/themezone"; 
  // 4. Font Awesome Icon styles
- @import "../src/fontawesome/scss/font-awesome"; 
+ @import "assets/font-awesome";
  // Any additional imported files //
  // 5. Add your styles into this file
  @import "theme/theme";
@@ -85,6 +85,7 @@ Some basics about the Sass and CSS files that come with __WP Theme Zone__:
   - Add your styles to the `/sass/theme/_theme.scss` file
   - And your variables to the `/sass/theme/_theme_variables.scss`
   - Or add other .scss files into it and `@import` it into `/sass/theme/_theme.scss`.
+  - Also you can use the variables available here `../src/sass/bootstrap4/_variables.scss`. But take note that don't update that file.
 
 ## Acknowledgment
 Thank you for the third party and libraries that is used into this wordpress theme.
