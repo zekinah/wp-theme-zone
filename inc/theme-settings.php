@@ -54,7 +54,7 @@ if ( ! function_exists( 'themezone_settings' ) ) {
 	}
 }
 
-// themezone settings
+// themezone navigation
 add_shortcode( 'themezone_navigation', 'themezone_navigation' );
 if ( ! function_exists( 'themezone_navigation' ) ) {
 	function themezone_navigation(){
@@ -71,4 +71,17 @@ if ( ! function_exists( 'themezone_navigation' ) ) {
 			);
 		return $nav;
 	}
+}
+
+// themezone scroll to top
+add_action('wp_footer', 'themezone_scroll_top');
+if ( ! function_exists( 'themezone_scroll_top' ) ) {
+	function themezone_scroll_top(){
+		$settings_value = get_option('themezone');
+		if(array_key_exists('scroll-to-top-options',$settings_value)) {
+			if($settings_value['scroll-to-top-options']) {
+				echo '<div id="zn-scroll-to-top" title="Scroll to top"><i class="fa fa-arrow-up"></i></div>';
+			}
+		}
+	};
 }

@@ -187,3 +187,20 @@ a.skip-link {
 .gallery-caption {
 	display: block;
 }
+
+// Scroll to top
+#zn-scroll-to-top {
+    background: $gray-900;
+    color: $white;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 28px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: none;
+}
+
+#zn-scroll-to-top:hover {
+    cursor: pointer;
+}
