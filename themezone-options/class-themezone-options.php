@@ -69,13 +69,13 @@ if ( ! class_exists( 'Themezone_Options' ) ){
                     ),
 
                     array(
-                        'id' 		=> 'header-option',
+                        'id' 		=> 'navigation-option',
                         'type' 		=> 'select',
-                        'title' 	=> __('Header Template', 'zn-opts'),
+                        'title' 	=> __('Navigation Template', 'zn-opts'),
                         'options' 	=> array(
-                            'default' 		=> __( 'Default', 'zn-opts' ),
-                            'center' 		=> __( 'Center', 'zn-opts' ),
                             'right' 		=> __( 'Right', 'zn-opts' ),
+                            'center' 		=> __( 'Center', 'zn-opts' ),
+                            'left' 		=> __( 'Left', 'zn-opts' ),
                         ),
                     ),
 

@@ -12,6 +12,7 @@
 defined( 'ABSPATH' ) || exit;
 
 $container = get_theme_mod( 'themezone_container_type' );
+$navigation = do_shortcode('[navigation-option]');
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -27,38 +28,7 @@ $container = get_theme_mod( 'themezone_container_type' );
 <div class="site" id="page">
 	<div id="wrapper-navbar">
 		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'themezone' ); ?></a>
-		<nav id="main-nav" class="navbar navbar-expand-md navbar-dark bg-dark" aria-labelledby="main-nav-label">
-			<h2 id="main-nav-label" class="sr-only">
-				<?php esc_html_e( 'Main Navigation', 'themezone' ); ?>
-			</h2>
-		<?php if ( 'container' === $container ) : ?>
-			<div class="container">
-		<?php endif; ?>
-					<!-- Your site title as branding in the menu -->
-					<?php if ( ! has_custom_logo() ) { ?>
-						<?php if ( is_front_page() && is_home() ) : ?>
-							<h1 class="navbar-brand mb-0"><a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a></h1>
-						<?php else : ?>
-							<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a>
-						<?php endif; ?>
-						<?php
-					} else {
-						the_custom_logo();
-					}
-					$test_description = get_bloginfo( 'description', 'display' );
-					if ( $test_description || is_customize_preview() ) :
-					?>
-						<p class="brand-description"><?php echo $test_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-					<?php endif; ?>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'themezone' ); ?>">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				
-				<!-- The WordPress Menu goes here -->
-				<?php echo do_shortcode('[themezone_navigation]'); ?>
+		
+		<?php get_template_part( 'template-parts/navigations/navigation', $navigation ); ?>
 
-			<?php if ( 'container' === $container ) : ?>
-			</div><!-- .container -->
-			<?php endif; ?>
-		</nav><!-- .site-navigation -->
 	</div><!-- #wrapper-navbar end -->
