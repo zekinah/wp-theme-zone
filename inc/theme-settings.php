@@ -84,10 +84,59 @@ if ( ! function_exists( 'themezone_navigation' ) ) {
 	}
 }
 
+// themezone custom style
+add_action('wp_head', 'themezone_styles_custom');
+if( ! function_exists( 'themezone_styles_custom' ) ) {
+	function themezone_styles_custom() {
+		// Theme Options > Custom CSS
+		if( $custom_css = zn_option_get( 'custom-css' ) ) {
+			echo '<!-- style | custom css | theme options -->'."\n";
+			echo '<style id="zn-theme-css">'."\n";
+				echo $custom_css ."\n";
+			echo '</style>'."\n";
+		}
+
+		// Theme Options > Colors > General
+		$color_styles = '';
+		if( $bg_header = zn_option_get( 'background-header' ) ){
+			$color_styles .= 'nav#main-nav {background-color: '. $bg_header .' !important;} ';
+		}
+		if( $bg_page = zn_option_get( 'background-page' ) ){
+			$color_styles .= 'div#index-wrapper {background-color: '. $bg_page .';} ';
+		}
+		if( $bg_footer = zn_option_get( 'background-footer' ) ){
+			$color_styles .= 'footer {background-color: '. $bg_footer .';} ';
+		}
+
+		if( $color_styles ){
+			echo '<!-- style | custom color -->'."\n";
+			echo '<style id="zn-color-css">'."\n";
+				echo $color_styles."\n";
+			echo '</style>'."\n";
+		}
+
+	}
+}
+
+// themezone custom script
+add_action('wp_footer', 'themezone_scripts_custom', 100);
+if( ! function_exists( 'themezone_scripts_custom' ) ) {
+	function themezone_scripts_custom() {
+		// Theme Options > Custom JS
+		if( $custom_js = zn_option_get( 'custom-js' ) ){
+			echo '<!-- script | custom js -->'."\n";
+			echo '<script id="zn-custom-js">'."\n";
+				echo $custom_js ."\n";
+			echo '</script>'."\n";
+		}
+	}
+}
+
 // themezone scroll to top
 add_action('wp_footer', 'themezone_scroll_top');
 if ( ! function_exists( 'themezone_scroll_top' ) ) {
 	function themezone_scroll_top(){
+		// Theme Options > Global > General > Scroll to top
 		$settings_value = get_option('themezone');
 		if(array_key_exists('scroll-to-top-options',$settings_value)) {
 			if($settings_value['scroll-to-top-options']) {

@@ -137,7 +137,7 @@ if ( ! class_exists( 'Themezone_Options' ) ){
                         'type' 		=> 'textarea',
                         'title' 	=> __('Top', 'zn-opts'),
                         'sub_desc'	=> __('zn_hook_top', 'zn-opts'),
-                        'desc' 		=> __('Executes <b>after</b> the opening <b>&lt;body&gt;</b> tag', 'zn-opts'),
+                        'desc' 		=> __('Executes <b>before</b> the closing <b>&lt;/head&gt;</b> tag', 'zn-opts'),
                     ),
 
                     array(
@@ -281,7 +281,7 @@ if ( ! class_exists( 'Themezone_Options' ) ){
                     ),
 
                     array(
-                        'id' 		=> 'background-color',
+                        'id' 		=> 'background-footer',
                         'type' 		=> 'color',
                         'title' 	=> __('Footer Background Color', 'zn-opts'),
                         'std' 		=> '#8E8A89',

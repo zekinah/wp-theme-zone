@@ -20,8 +20,9 @@ $navigation = zn_option_get('navigation-option');
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-	<link rel="icon" href="<?=get_option('favicon');?>" type="image/x-icon" />
+	<link rel="icon" href="<?=zn_option_get('favicon');?>" type="image/x-icon" />
 	<?php wp_head(); ?>
+	<?= zn_option_get('hook-top') ?>
 </head>
 <body <?php body_class(); ?> >
 <?php wp_body_open(); ?>

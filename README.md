@@ -88,7 +88,7 @@ Some basics about the Sass and CSS files that come with __WP Theme Zone__:
   - Also you can use the variables available here `../src/sass/bootstrap4/_variables.scss`. But take note that don't update that file.
 
 
-## Getting the value of Theme Settings
+## Theme Setting Hooks
 There are several ways to get the settings of __WP Theme Zone__.
 - By using a function
 ``` zn_option_get('option-id') ```
