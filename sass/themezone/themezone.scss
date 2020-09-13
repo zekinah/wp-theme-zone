@@ -1,3 +1,14 @@
+a {
+    color: #343a40;
+    text-decoration: none;
+    background-color: transparent;
+}
+a:hover {
+    color: #1b1f22;
+    text-decoration: underline;
+}
+
+
 // Some basic padding for all wrappers
 .wrapper {
 	padding: $grid-gutter-width 0;
@@ -33,14 +44,12 @@
 }
 
 // Header Global
-.entry-header {
-	background-color: $gray-200;
-}
 .innerpage-header{
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
 	padding: 80px 20px;
+	background-color: $gray-200;
 }
 // Sidebar
 #secondary {
@@ -186,6 +195,15 @@ a.skip-link {
 }
 .gallery-caption {
 	display: block;
+}
+
+// Post
+.entry-meta {
+    display: inline-block;
+    margin-bottom: 7px;
+    font-style: italic;
+    color: $gray-600;
+    font-size: 12px;
 }
 
 // Scroll to top

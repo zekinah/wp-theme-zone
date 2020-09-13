@@ -14,8 +14,16 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 get_header();
+$thumb = '';
+if(file_exists($thumb)){
+	$image = get_field('banner_image');
+	if ( $image ) : $thumb = $image; endif;	
+}
 $container = get_theme_mod( 'themezone_container_type' );
 ?>
+<header style="background-image: url('<?= $thumb ?>')" class="innerpage-header">
+	<h1 class="text-center innerpage-title">Blogs</h1>
+</header>
 <div class="wrapper" id="index-wrapper">
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 		<div class="row">
@@ -25,9 +33,7 @@ $container = get_theme_mod( 'themezone_container_type' );
 					if ( have_posts() ) :
 						if ( is_home() && ! is_front_page() ) :
 							?>
-							<header>
-								<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-							</header>
+							<h2 class="page-title screen-reader-text"><?php single_post_title(); ?></h2>
 							<?php
 						endif;
 						/* Start the Loop */
