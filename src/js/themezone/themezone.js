@@ -1,7 +1,7 @@
 (function( $ ) {
     'use strict';
 	$( window ).load(function() {
-        console.log('Themezone Initialized');
+        console.log('Wp Theme Zone Initialized');
         /**
          * LazyLoading Laziness
          */

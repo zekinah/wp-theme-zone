@@ -295,14 +295,6 @@ if ( ! class_exists( 'Themezone_Options' ) ){
                 'title'		=> __('General', 'zn-opts'),
                 'fields'	=> array(
                     array(
-                        'id' 		=> 'fontawesome-options',
-                        'type' 		=> 'switch',
-                        'title' 	=> __( 'Font Awesome v4.4.0', 'zn-opts' ),
-                        'desc' 		=> __('More info: <a target="_blank" href="https://fortawesome.github.io/Font-Awesome/icons/">Read Documentation</a><br />', 'zn-opts'),
-                        'options' 	=> array( '0' => 'Off', '1' => 'On' ),
-                        'std' 		=> '0'
-                    ),
-                    array(
                         'id' 		=> 'scrollreveal-options',
                         'type' 		=> 'switch',
                         'title' 	=> __( 'Scroll Reveal', 'zn-opts' ),
@@ -324,17 +316,6 @@ if ( ! class_exists( 'Themezone_Options' ) ){
                         'title' 	=> __( 'Dark Mode Widget', 'zn-opts' ),
                         'desc' 		=> __('More info: <a target="_blank" href="https://darkmodejs.learn.uno/">Read Documentation</a><br />', 'zn-opts'),
                         'options' 	=> array( '0' => 'Off', '1' => 'On' ),
-                        'std' 		=> '0'
-                    ),
-                    array(
-                        'id' 		=> 'retina-js',
-                        'type' 		=> 'select',
-                        'title' 	=> __('Retina.js', 'zn-opts'),
-                        'desc' 		=> __('More info: <a target="_blank" href="http://imulus.github.io/retinajs/">Read Documentation</a><br />Retina.js disables responsive images in WP 4.4+<br />', 'zn-opts'),
-                        'options' 	=> array(
-                            '' 	=> __('Default: only Retina Logo', 'zn-opts'),
-                            '1' => __('Enable Retina.js | please prepare @2x images', 'zn-opts'),
-                        ),
                         'std' 		=> '0'
                     ),
 

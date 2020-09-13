@@ -55,7 +55,7 @@ if ( ! function_exists( 'themezone_settings' ) ) {
 }
 
 // return a value from themezone settings by option id - Example - zn_option_get('option-id');
-if( ! function_exists( 'zn_option_get' ) ){
+if( ! function_exists( 'zn_option_get' ) ) {
 	function zn_option_get( $option_id, $default = null ){
 		$settings_value = get_option('themezone');
 		if( is_array($settings_value) || array_key_exists($option_id,$settings_value)) {
@@ -81,6 +81,27 @@ if ( ! function_exists( 'themezone_navigation' ) ) {
 				)
 			);
 		return $nav;
+	}
+}
+
+// themezone 
+add_action('wp_footer', 'themezone_enable_addons');
+if( ! function_exists( 'themezone_enable_addons' ) ) {
+	function themezone_enable_addons() {
+
+		// Enable Scroll Reveal
+		if(zn_option_get('scrollreveal-options')) { 
+			wp_enqueue_script( 'scroll-reveal',  THEME_URI .'/src/js/themezone/scrollreveal/scrollreveal.min.js',array('jquery'), THEME_VERSION);
+		}
+		// Enable JS Parallax
+		if(zn_option_get('jsparallax-options')) { 
+			wp_enqueue_script( 'parallax', THEME_URI . '/src/js/themezone/parallax/parallax.min.js',array('jquery'), THEME_VERSION);
+		}
+		// Enable Dark Mode
+		if(zn_option_get('darkmode-options')) {
+			wp_enqueue_script( 'dark-mode', THEME_URI . '/src/js/themezone/darkmode/darkmode-js.min.js',array('jquery'), THEME_VERSION);
+		}
+
 	}
 }
 
