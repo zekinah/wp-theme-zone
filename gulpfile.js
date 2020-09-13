@@ -183,8 +183,8 @@ gulp.task( 'scripts', function() {
 	var scripts = [
 		// Start - All BS4 stuff
 		paths.dev + '/js/bootstrap4/bootstrap.bundle.js',
+		paths.dev + '/js/themezone/*.js',
 		paths.dev + '/js/themejs/*.js',
-
 		// End - All BS4 stuff
 
 		paths.dev + '/js/skip-link-focus-fix.js',

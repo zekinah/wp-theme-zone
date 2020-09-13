@@ -129,14 +129,26 @@ if ( ! function_exists( 'themezone_post_thumbnail' ) ) :
 
 			<div class="post-thumbnail">
 				<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-					<?php the_post_thumbnail(); ?>
+					<?php
+						the_post_thumbnail(
+							'post-thumbnail', array(
+								'src' => false,
+								'data-src' => wp_get_attachment_url( get_post_thumbnail_id() ),
+								'class' => 'img-fluid lazyload',
+								'title' => get_the_title(),
+								'alt' => get_the_title(),
+								'loading' => 'lazy',
+								'draggable' => false
+							)
+						); 
+					?>
 				</a>
 			</div><!-- .post-thumbnail -->
 
-		<?php else : ?>
+		<?php else : // Thumbnail Fallback ?>
 			<div class="post-thumbnail">
 				<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-					<img class="img-fluid" src="//placehold.it/700x300" draggable="false" alt="No Image" title="No Image" />
+					<img class="lazyload img-fluid" loading="lazy" data-src="//placehold.it/700x300" draggable="false" alt="No Image" title="No Image" />
 				</a>
 			</div><!-- .post-thumbnail -->
 
