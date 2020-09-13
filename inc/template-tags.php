@@ -120,33 +120,25 @@ if ( ! function_exists( 'themezone_post_thumbnail' ) ) :
 	 * element when on single views.
 	 */
 	function themezone_post_thumbnail() {
-		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
+		if ( post_password_required() || is_attachment()) {
 			return;
 		}
 
-		if ( is_singular() ) :
+		if ( is_singular() && has_post_thumbnail() ) :
 			?>
 
 			<div class="post-thumbnail">
-				<?php the_post_thumbnail(); ?>
+				<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+					<?php the_post_thumbnail(); ?>
+				</a>
 			</div><!-- .post-thumbnail -->
 
 		<?php else : ?>
-
-			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-				<?php
-					the_post_thumbnail(
-						'post-thumbnail',
-						array(
-							'alt' => the_title_attribute(
-								array(
-									'echo' => false,
-								)
-							),
-						)
-					);
-				?>
-			</a>
+			<div class="post-thumbnail">
+				<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+					<img class="img-fluid" src="//placehold.it/700x300" draggable="false" alt="No Image" title="No Image" />
+				</a>
+			</div><!-- .post-thumbnail -->
 
 			<?php
 		endif; // End is_singular().
