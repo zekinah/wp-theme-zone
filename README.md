@@ -60,7 +60,7 @@ Or, to run with Browser-Sync:
 - `gulp compile` : manual compiling the custom css on the `wp-theme-zone/sass/theme/_theme.scss` with the existing css. 
 - `gulp watch-bs` : reloads page automatically on your browser.
 
-## Confused by All the CSS and Sass Files?
+## Confused by all the CSS and Sass Files?
 
 Some basics about the Sass and CSS files that come with __WP Theme Zone__:
 - The theme itself uses the `/style.css`file only to identify the theme inside of WordPress. The file is not loaded by the theme and does not include any styles.
@@ -80,13 +80,19 @@ Some basics about the Sass and CSS files that come with __WP Theme Zone__:
  @import "theme/theme";
  ```
 
+## For Developer - Customizing the theme
+
+### Styling
 - Don’t edit the number 2-4 files/filesets listed above or you won’t be able to update __WP Theme Zone__ without overwriting your own work!
 - Your design goes into: `/sass/theme`.
   - Add your styles to the `/sass/theme/_theme.scss` file
   - And your variables to the `/sass/theme/_theme_variables.scss`
   - Or add other .scss files into it and `@import` it into `/sass/theme/_theme.scss`.
-  - Also you can use the variables available here `../src/sass/bootstrap4/_variables.scss`. But take note that don't edit that file.
+  - Also you can use the variables available here `src/sass/bootstrap4/_variables.scss`. But take note that don't edit that file.
 
+### Scripts
+- Your script goes into: `src/js/theme`
+  - Add your script to the `src/js/theme/custom-javascript.js` file
 
 ## Theme Setting Hooks
 There are several ways to get the settings of __WP Theme Zone__.
@@ -94,6 +100,22 @@ There are several ways to get the settings of __WP Theme Zone__.
 ``` zn_option_get('option-id') ```
 - By using a shortcode
 ``` do_shorcode('option-id') ```
+
+## For Administrator - Customizing the theme
+- Wp Theme Zone > Dashboard
+  - Global
+    - General // Layout
+    - Copyrights // content
+    - Hooks // Can Add custom SEO scripts
+  - Social
+    - General // Social Media links
+  - Colors
+    - General // Background Color of header, body, footer
+  - Addons
+    - General // Options to use embeded third party libraries
+  - Custom CSS & JS
+    - CSS // Section to add custom CSS
+    - JS // Section to add custom JS
 
 ## Acknowledgment
 Thank you for the third party and libraries that is used into this wordpress theme.
