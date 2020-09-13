@@ -34,12 +34,12 @@ $container = get_theme_mod( 'themezone_container_type' );
 							 * If you want to overload this in a child theme then include a file
 							 * called content-search.php and that will be used instead.
 							 */
-							get_template_part( 'template-parts/content', 'search' );
+							get_template_part( 'template-parts/contents/content', 'search' );
 						endwhile;
 						wp_reset_query();
 						echo '<div class="pagination">'.themezone_pagination().'</div>'; // Pagination
 					else :
-						get_template_part( 'template-parts/content', 'none' );
+						get_template_part( 'template-parts/contents/content', 'none' );
 
 					endif;
 					?>
