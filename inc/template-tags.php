@@ -133,7 +133,7 @@ if ( ! function_exists( 'themezone_post_thumbnail' ) ) :
 						the_post_thumbnail(
 							'post-thumbnail', array(
 								'src' => false,
-								'data-src' => wp_get_attachment_url( get_post_thumbnail_id() ),
+								'data-src' => get_the_post_thumbnail_url(),
 								'class' => 'img-fluid lazyload',
 								'title' => get_the_title(),
 								'alt' => get_the_title(),

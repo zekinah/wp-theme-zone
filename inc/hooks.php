@@ -36,7 +36,7 @@ if ( ! function_exists( 'themezone_add_site_info' ) ) {
 				/* translators: 1: Theme name, 2: Theme author */
 				esc_html__( 'Theme: %1$s by %2$s.', 'themezone' ),
 				THEME_NAME,
-				'<a href="' . esc_url( __( 'http://themezone.com', 'themezone' ) ) . '">themezone.com</a>'
+				'<a href="' . esc_url( __( 'http://www.zekinahlecaros.com', 'themezone' ) ) . '" target="blank">zekinahlecaros.com</a>'
 			),
 			sprintf( // WPCS: XSS ok.
 				/* translators: Theme version */
