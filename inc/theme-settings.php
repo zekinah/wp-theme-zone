@@ -95,11 +95,23 @@ if( ! function_exists( 'themezone_enable_addons' ) ) {
 		}
 		// Enable JS Parallax
 		if(zn_option_get('jsparallax-options')) { 
-			wp_enqueue_script( 'parallax', THEME_URI . '/src/js/themezone/parallax/parallax.min.js',array('jquery'), THEME_VERSION);
+			wp_enqueue_script( 'parallax', THEME_URI . '/src/js/themezone/parallax/parallax.min.js',array(), THEME_VERSION);
 		}
 		// Enable Dark Mode
 		if(zn_option_get('darkmode-options')) {
-			wp_enqueue_script( 'dark-mode', THEME_URI . '/src/js/themezone/darkmode/darkmode-js.min.js',array('jquery'), THEME_VERSION);
+			wp_enqueue_script( 'dark-mode', THEME_URI . '/src/js/themezone/darkmode/darkmode-js.min.js',array(), THEME_VERSION);
+
+			$darkmode_js = '';
+			if($darkmode_js = zn_option_get('darkmode-custom-options')) {
+				$darkmode_js .= 'const darkmode = new Darkmode('.$darkmode_js.');darkmode.showWidget();'; // Custom Dark Mode
+			} else {
+				$darkmode_js .= 'const darkmode = new Darkmode();darkmode.showWidget();'; // Default
+			}
+			
+			echo '<!-- script | darkmode js -->'."\n";
+			echo '<script defer id="zn-darkmode-js">'."\n";
+				echo $darkmode_js ."\n";
+			echo '</script>'."\n";
 		}
 
 	}

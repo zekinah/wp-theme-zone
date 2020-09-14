@@ -270,7 +270,7 @@ if ( ! class_exists( 'Themezone_Options' ) ){
                         'id' 		=> 'background-header',
                         'type' 		=> 'color',
                         'title' 	=> __('Header Background Color', 'zn-opts'),
-                        'std' 		=> '#1e73be',
+                        'std' 		=> '#343a40',
                     ),
 
                     array(
@@ -314,9 +314,14 @@ if ( ! class_exists( 'Themezone_Options' ) ){
                         'id' 		=> 'darkmode-options',
                         'type' 		=> 'switch',
                         'title' 	=> __( 'Dark Mode Widget', 'zn-opts' ),
-                        'desc' 		=> __('More info: <a target="_blank" href="https://darkmodejs.learn.uno/">Read Documentation</a><br />', 'zn-opts'),
                         'options' 	=> array( '0' => 'Off', '1' => 'On' ),
                         'std' 		=> '0'
+                    ),
+                    array(
+                        'id' 		=> 'darkmode-custom-options',
+                        'type' 		=> 'textarea',
+                        'title' 	=> __('Dark Mode Custom', 'zn-opts'),
+                        'desc' 		=> __('More info: <a target="_blank" href="https://darkmodejs.learn.uno/">Read Documentation</a><br />', 'zn-opts'),
                     ),
 
                 ),
