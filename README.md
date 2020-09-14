@@ -119,10 +119,12 @@ There are several ways to get the settings of __WP Theme Zone__.
 
 ## Acknowledgment
 Thank you for the third party and libraries that is used into this wordpress theme.
-* [Underscores](https://underscores.me/) - based theme
-* [Bootstrap](https://getbootstrap.com/)
-* [Fontawesome](https://fontawesome.com/)
-* [base64](https://base64.guru/converter/encode/image)
+* [Underscores](https://underscores.me/) - Based Theme
+* [Bootstrap](https://getbootstrap.com/) - Styling
+* [Fontawesome](https://fontawesome.com/) - Icons
+* [Scroll Reveal](https://scrollrevealjs.org/) - Add Ons
+* [Parallax](https://pixelcog.github.io/parallax.js/) - Add Ons
+* [Dark Mode](https://darkmodejs.learn.uno/) - Add Ons
 
 ## Contributor
 
