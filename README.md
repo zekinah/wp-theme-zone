@@ -9,6 +9,18 @@ __WP Theme Zone__ requires the following dependencies:
 - [Node.js](https://nodejs.org/)
 - [Gulp](https://gulpjs.com/)
 
+## Features
+|🛠|Includes|
+|:-:|:---|
+|📦| Theme Administrator |
+|🔥| Latest Bootstrap and Font Awesome |
+|🎨| Next Generation CSS |
+|✂️| Source Maps |
+|🎒| Code Minification |
+|🌈| Lazy Loading for the images |
+|🤖| External Libraries |
+|🛎| Production ready ZIP theme |
+
 ## Installation
 There are several ways to install __WP Theme Zone__. We'll look at three of them: (1) classic install by uploading __WP Theme Zone__ to a WordPress install, and (2) using npm
 
@@ -66,7 +78,7 @@ Some basics about the Sass and CSS files that come with __WP Theme Zone__:
 - The theme itself uses the `/style.css`file only to identify the theme inside of WordPress. The file is not loaded by the theme and does not include any styles.
 - The `/css/theme.css` and its minified little brother `/css/theme.min.css` file(s) provides all styles. It is composed of five different SCSS sets and one variable file at `/sass/theme.scss`:
 
- ```
+ ```scss
  // 1. Add your variables into this file. Also add variables to overwrite Bootstrap or __WP Theme Zone__ variables here
  @import "theme/theme_variables"; 
  // 2. All the Bootstrap stuff - Don´t edit this! 
