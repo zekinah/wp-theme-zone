@@ -43,15 +43,16 @@ if ( ! class_exists( 'Themezone' ) ){
             $this->menu = $this->options->zone_option_menu();
             $this->sections = $this->options->zone_option_section();
 
-            $this->enqueue_styles();
-            $this->enqueue_scripts();
         }
 
         public function run() {
             // register wordpress menu
             add_action('admin_menu', array(&$this, 'theme_zone_option'));
             // register theme setting
-			add_action( 'admin_init', array( &$this, 'register_theme_zone_setting' ) );
+            add_action( 'admin_init', array( &$this, 'register_theme_zone_setting' ) );
+            // Loads Administrator CSS and JS
+            add_action( 'admin_enqueue_scripts', array(&$this, 'enqueue_styles') );
+            add_action( 'admin_enqueue_scripts', array(&$this, 'enqueue_scripts') );
         }
 
         /**
@@ -59,8 +60,7 @@ if ( ! class_exists( 'Themezone' ) ){
          */
         public function enqueue_styles(){
             wp_enqueue_style( 'jquery-ui-core' );
-            wp_register_style( 'themezone-option-css', THEME_URI. '/themezone-options/assets/css/themezoneoption.css', array(), $this->version );
-            wp_enqueue_style( 'themezone-option-css' );
+            wp_enqueue_style( 'themezone-option-css', THEME_URI. '/themezone-options/assets/css/themezoneoption.css', array(), $this->version );
         }
 
         /**
