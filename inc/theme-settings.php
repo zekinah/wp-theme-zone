@@ -145,6 +145,9 @@ if( ! function_exists( 'themezone_styles_custom' ) ) {
 		if( $bg_footer = zn_option_get( 'background-footer' ) ){
 			$color_styles .= 'footer {background-color: '. $bg_footer .';} ';
 		}
+		if( $bg_scroll_top = zn_option_get( 'background-scroll-top' ) ){
+			$color_styles .= '#zn-scroll-to-top {background-color: '. $bg_scroll_top .';} ';
+		}
 
 		if( $color_styles ){
 			echo '<!-- style | custom color -->'."\n";

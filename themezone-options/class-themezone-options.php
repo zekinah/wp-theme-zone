@@ -302,6 +302,13 @@ if ( ! class_exists( 'Themezone_Options' ) ){
                         'std' 		=> '#8E8A89',
                     ),
 
+                    array(
+                        'id' 		=> 'background-scroll-top',
+                        'type' 		=> 'color',
+                        'title' 	=> __('Scroll to Top Color', 'zn-opts'),
+                        'std' 		=> '#212529',
+                    ),
+
                 ),
             );
 
