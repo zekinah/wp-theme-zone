@@ -27,7 +27,7 @@ $scrollbartop = zn_option_get('scroll-bar-top-options');
 </head>
 <body <?php body_class(); ?> >
 <?php wp_body_open(); ?>
-<?php if ($scrollbartop) { echo '<div class="scrollbar" id="bar"></div>'; } ?>
+<?php if ($scrollbartop) { echo '<div class="scrollbar" id="zn-bar"></div>'; } ?>
 <div class="site" id="page">
 	<div id="wrapper-navbar">
 		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'themezone' ); ?></a>

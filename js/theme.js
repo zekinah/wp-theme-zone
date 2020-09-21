@@ -7015,12 +7015,28 @@
 
   $(window).load(function () {
     console.log('Wp Theme Zone Initialized');
-    scrollBar();
     lazyLoad();
+    scrollBar();
+    scrollToTop();
   });
 
+  function scrollToTop() {
+    $(window).scroll(function () {
+      if ($(this).scrollTop()) {
+        $('#zn-scroll-to-top').fadeIn();
+      } else {
+        $('#zn-scroll-to-top').fadeOut();
+      }
+    });
+    $("#zn-scroll-to-top").on('click', function () {
+      $("html, body").animate({
+        scrollTop: 0
+      }, 500);
+    });
+  }
+
   function scrollBar() {
-    $("#bar").css("width", "0%");
+    $("#zn-bar").css("width", "0%");
 
     if (document.body.clientWidth > 860) {
       $(window).scroll(function () {
@@ -7028,7 +7044,7 @@
             a = $(document).height(),
             b = $(window).height(),
             result = parseInt(s / (a - b) * 100);
-        $("#bar").css("width", result + "%");
+        $("#zn-bar").css("width", result + "%");
       });
     }
   }
