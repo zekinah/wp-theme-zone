@@ -275,9 +275,9 @@ if ( ! class_exists( 'Themezone_Options' ) ){
                 'fields'	=> array(
 
                     array(
-                        'id' 		=> 'background-header',
+                        'id' 		=> 'background-scroll',
                         'type' 		=> 'color',
-                        'title' 	=> __('Scroll Bar Top Color', 'zn-opts'),
+                        'title' 	=> __('Scroll Bar Color', 'zn-opts'),
                         'std' 		=> '#212529',
                     ),
 

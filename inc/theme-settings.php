@@ -131,6 +131,11 @@ if( ! function_exists( 'themezone_styles_custom' ) ) {
 
 		// Theme Options > Colors > General
 		$color_styles = '';
+		if( $bg_scroll = zn_option_get( 'background-scroll' ) ){
+			$color_styles .= '::-webkit-scrollbar-thumb {background: '. $bg_scroll .' !important;} ';
+			$color_styles .= '.scrollbar {background: '. $bg_scroll .' !important;} ';
+		}
+
 		if( $bg_header = zn_option_get( 'background-header' ) ){
 			$color_styles .= 'nav#main-nav {background-color: '. $bg_header .' !important;} ';
 		}
