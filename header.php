@@ -13,6 +13,7 @@ defined( 'ABSPATH' ) || exit;
 
 $container = get_theme_mod( 'themezone_container_type' );
 $navigation = zn_option_get('navigation-option');
+$scrollbartop = zn_option_get('scroll-bar-top-options');
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -26,6 +27,7 @@ $navigation = zn_option_get('navigation-option');
 </head>
 <body <?php body_class(); ?> >
 <?php wp_body_open(); ?>
+<?php if ($scrollbartop) { echo '<div class="scrollbar" id="bar"></div>'; } ?>
 <div class="site" id="page">
 	<div id="wrapper-navbar">
 		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'themezone' ); ?></a>

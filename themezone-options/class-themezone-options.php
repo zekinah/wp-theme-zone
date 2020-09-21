@@ -80,13 +80,21 @@ if ( ! class_exists( 'Themezone_Options' ) ){
                     ),
 
                     array(
+                        'id' 		=> 'scroll-bar-top-options',
+                        'type' 		=> 'switch',
+                        'title' 	=> __( 'Scroll Bar Top', 'zn-opts' ),
+                        'options' 	=> array( '0' => 'Off', '1' => 'On' ),
+                        'std' 		=> '1'
+                    ),
+
+                    array(
                         'id' 		=> 'scroll-to-top-options',
                         'type' 		=> 'switch',
                         'title' 	=> __( 'Scroll to Top', 'zn-opts' ),
                         'options' 	=> array( '0' => 'Off', '1' => 'On' ),
                         'std' 		=> '0'
                     ),
-                    // Adding Info
+
                     array(
                         'id' 		=> 'icon-info-layout',
                         'type' 		=> 'info',
@@ -265,6 +273,13 @@ if ( ! class_exists( 'Themezone_Options' ) ){
             $sections['colors'] = array(
                 'title' 	=> __('General', 'zn-opts'),
                 'fields'	=> array(
+
+                    array(
+                        'id' 		=> 'background-header',
+                        'type' 		=> 'color',
+                        'title' 	=> __('Scroll Bar Top Color', 'zn-opts'),
+                        'std' 		=> '#212529',
+                    ),
 
                     array(
                         'id' 		=> 'background-header',

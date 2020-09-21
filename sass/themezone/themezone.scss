@@ -9,6 +9,14 @@
     background: $gray-900;
 }
 
+.scrollbar {
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	height: 0.5em;
+	background: $gray-900;
+}
+
 a {
     color: #343a40;
     text-decoration: none;
