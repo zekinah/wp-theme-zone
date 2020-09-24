@@ -1,3 +1,21 @@
+/*--------------------------------------------*/
+/*Fixed the conflict with Bootstrap*/
+.woocommerce-billing-fields .form-row, .woocommerce-shipping-fields .form-row,.woocommerce form .form-row {
+	display: block;
+  }
+  .woocommerce .col2-set .col-1, .woocommerce-page .col2-set .col-1,.woocommerce .col2-set .col-2, .woocommerce-page .col2-set .col-2 {
+	max-width: unset;
+  }
+  /*Set as one column*/
+  .woocommerce .woocommerce-checkout .col2-set .col-1,
+  .woocommerce .woocommerce-checkout .col2-set .col-2 {
+	  width: 100% !important;
+  }
+  .woocommerce .woocommerce-checkout .col2-set .col-1 {
+	  margin-bottom: 30px;
+  }
+  /*--------------------------------------------*/
+
 // Fix billing field wrapper
 .woocommerce-input-wrapper {
 	width: 100%;
