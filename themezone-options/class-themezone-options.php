@@ -209,13 +209,6 @@ if ( ! class_exists( 'Themezone_Options' ) ){
                         'desc' 		=> __('Link to the profile page', 'zn-opts'),
                     ),
                     array(
-                        'id' 		=> 'social-googleplus',
-                        'type' 		=> 'text',
-                        'title' 	=> __('Google +', 'zn-opts'),
-                        'sub_desc'	=> __('zn_social_media_gmail', 'zn-opts'),
-                        'desc' 		=> __('Link to the profile page', 'zn-opts'),
-                    ),
-                    array(
                         'id' 		=> 'social-twitter',
                         'type' 		=> 'text',
                         'title' 	=> __('Twitter', 'zn-opts'),
