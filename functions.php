@@ -50,6 +50,9 @@ foreach ($requireFiles as $file) {
 	require_once THEME_DIR . '/inc' . $file;
 }
 
+/** 
+ * If Woocommerce is activated
+*/
 if ( ! function_exists( 'is_woocommerce_activated' ) ) {
 	function is_woocommerce_activated() {
 		if ( class_exists( 'woocommerce' ) ) {

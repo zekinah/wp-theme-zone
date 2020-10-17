@@ -147,7 +147,7 @@ if ( ! class_exists( 'Themezone' ) ){
 
 						if(isset($field['title'])){
 							$th = (isset($field['sub_desc']))?$field['title'].'<span class="description">'.$field['sub_desc'].'</span>':$field['title'];
-						}else{
+						} else {
 							$th = '';
 						}
 
@@ -183,9 +183,12 @@ if ( ! class_exists( 'Themezone' ) ){
                     $settings_value = get_option('themezone');
                     //Get the value
                     $value = '';
-                    $value = (array_key_exists($field['id'],$settings_value) ? $settings_value[$field['id']] : '');
-					$render = new $field_class( $field, $value, 'themezone' );
-					$render->render();
+                    if (is_array($settings_value)) {
+                        $value = (array_key_exists($field['id'],$settings_value) ? $settings_value[$field['id']] : '');
+                        $render = new $field_class( $field, $value, 'themezone' );
+                        $render->render();
+                    }
+                    
 				}
 
 			}
