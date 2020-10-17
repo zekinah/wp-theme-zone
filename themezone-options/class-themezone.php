@@ -138,27 +138,18 @@ if ( ! class_exists( 'Themezone' ) ){
             register_setting('themezone_group', 'themezone');
 
 			foreach($this->sections as $z => $section){
-
 				add_settings_section($z.'_section', $section['title'], array(&$this, 'theme_zone_section_desc'), $z.'_section_group');
-
 				if(isset($section['fields'])){
-
 					foreach($section['fields'] as $fieldk => $field){
-
 						if(isset($field['title'])){
 							$th = (isset($field['sub_desc']))?$field['title'].'<span class="description">'.$field['sub_desc'].'</span>':$field['title'];
 						} else {
 							$th = '';
 						}
-
 						add_settings_field($fieldk.'_field', $th, array(&$this,'theme_zone_input_field'), $z.'_section_group', $z.'_section', $field); // checkbox
-
 					}
-
 				}
-
             }
-
         }
         
         /**
@@ -183,14 +174,12 @@ if ( ! class_exists( 'Themezone' ) ){
                     $settings_value = get_option('themezone');
                     //Get the value
                     $value = '';
-                    if (is_array($settings_value)) {
+                    if (is_array($settings_value) || is_object($settings_value)) {
                         $value = (array_key_exists($field['id'],$settings_value) ? $settings_value[$field['id']] : '');
                         $render = new $field_class( $field, $value, 'themezone' );
                         $render->render();
-                    }
-                    
+                    } 
 				}
-
 			}
 		}
 
