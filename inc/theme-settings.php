@@ -58,8 +58,10 @@ if ( ! function_exists( 'themezone_settings' ) ) {
 if( ! function_exists( 'zn_option_get' ) ) {
 	function zn_option_get( $option_id, $default = null ){
 		$settings_value = get_option('themezone');
-		if( is_array($settings_value) || array_key_exists($option_id,$settings_value)) {
-			return $settings_value[$option_id];
+		if(is_array($settings_value)) {
+			if (array_key_exists($option_id,$settings_value)) {
+				return $settings_value[$option_id];
+			}
 		}
 		return $default;
 	}
@@ -179,9 +181,11 @@ if ( ! function_exists( 'themezone_scroll_top' ) ) {
 	function themezone_scroll_top(){
 		// Theme Options > Global > General > Scroll to top
 		$settings_value = get_option('themezone');
-		if(array_key_exists('scroll-to-top-options',$settings_value)) {
-			if($settings_value['scroll-to-top-options']) {
-				echo '<div id="zn-scroll-to-top" title="Scroll to top"><i class="fa fa-arrow-up"></i></div>';
+		if(is_array($settings_value)) {
+			if(array_key_exists('scroll-to-top-options',$settings_value)) {
+				if($settings_value['scroll-to-top-options']) {
+					echo '<div id="zn-scroll-to-top" title="Scroll to top"><i class="fa fa-arrow-up"></i></div>';
+				}
 			}
 		}
 	};
