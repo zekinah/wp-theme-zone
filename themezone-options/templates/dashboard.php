@@ -14,9 +14,11 @@ defined( 'ABSPATH' ) || exit;
     <div class="dashboard-tab register">
         <div id="zn-wrapper">
             <form method="post" action="options.php" enctype="multipart/form-data" id="zn-form-wrapper">
-                <?php settings_fields('themezone_group'); ?>
-
-
+                <?php
+                    settings_fields('themezone_group');
+                    $this->options['last_tab'] = isset( $this->options['last_tab'] ) ? $this->options['last_tab'] : false;
+                    echo '<input type="hidden" id="last_tab" name="themezone[last_tab]" value="'.$this->options['last_tab'].'" />';
+                ?>
                 <div id="zn-aside">
                     <div class="zn-logo"></div>
                     <ul class="zn-menu">
@@ -42,7 +44,6 @@ defined( 'ABSPATH' ) || exit;
                 </div>
 
                 <div id="zn-main">
-
                     <div class="zn-header">
                         <input type="submit" name="submit" value="<?= __('Save Changes', 'zn-opts'); ?>" class="zn-popup-save" />
                     </div>
