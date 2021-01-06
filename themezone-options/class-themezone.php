@@ -193,7 +193,6 @@ if ( ! class_exists( 'Themezone' ) ){
 		 */
 		public function theme_zone_default_values() {
 			$defaults = array();
-
 			foreach ($this->sections as $k => $section) {
 				if (isset($section['fields'])) {
 					foreach ($section['fields'] as $fieldk => $field) {
@@ -204,7 +203,6 @@ if ( ! class_exists( 'Themezone' ) ){
 					}
 				}
 			}
-
 			$defaults['last_tab'] = false;
 			return $defaults;
 		}
