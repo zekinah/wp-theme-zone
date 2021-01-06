@@ -46,6 +46,8 @@ if ( ! class_exists( 'Themezone' ) ){
         }
 
         public function run() {
+            // set option with defaults
+			add_action( 'init', array( $this, 'theme_zone_set_default_options' ) );
             // register wordpress menu
             add_action('admin_menu', array(&$this, 'theme_zone_option'));
             // register theme setting
@@ -150,6 +152,9 @@ if ( ! class_exists( 'Themezone' ) ){
 					}
 				}
             }
+
+            do_action('themezone-opts-register-settings');
+			do_action('themezone-opts-register-settings-themezone_group');
         }
         
         /**
@@ -181,6 +186,37 @@ if ( ! class_exists( 'Themezone' ) ){
                     } 
 				}
 			}
+        }
+        
+        /**
+		 * Get default options into an array suitable for the settings API
+		 */
+		public function theme_zone_default_values() {
+			$defaults = array();
+
+			foreach ($this->sections as $k => $section) {
+				if (isset($section['fields'])) {
+					foreach ($section['fields'] as $fieldk => $field) {
+						if (!isset($field['std'])) {
+							$field['std'] = '';
+						}
+						$defaults[$field['id']] = $field['std'];
+					}
+				}
+			}
+
+			$defaults['last_tab'] = false;
+			return $defaults;
+		}
+
+		/**
+		 * Set default options on admin_init if option doesnt exist (theme activation hook caused problems, so admin_init it is)
+		 */
+		public function theme_zone_set_default_options(){
+			if ( ! get_option( 'themezone' ) ) {
+				add_option( 'themezone', $this->theme_zone_default_values() );
+			}
+			$this->options = get_option( 'themezone' );
 		}
 
 
