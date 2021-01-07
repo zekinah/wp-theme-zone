@@ -77,6 +77,7 @@ if ( ! class_exists( 'Themezone_Options' ) ){
                             'center' 		=> __( 'Center', 'zn-opts' ),
                             'left' 		=> __( 'Left', 'zn-opts' ),
                         ),
+                        'std'       => 'right'
                     ),
 
                     array(
