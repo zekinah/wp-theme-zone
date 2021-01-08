@@ -15,6 +15,8 @@ if ( ! class_exists( 'Themezone' ) ){
 
         private $version;
 
+        private $page;
+
         private $theme_name;
 
         private $options;
@@ -133,7 +135,7 @@ if ( ! class_exists( 'Themezone' ) ){
             // icon@16x16
             $icon = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfkCQYWJwyiou8VAAABEElEQVQoz6WQPyiEAQDFf9/33Z+6c4bjMjBIUkfJcAwyGaWMbmKxMYjJIoNRWWy3WERZrpiYDDIoNptbMFA3kC7XcT/DSWH0pvfqV6/34L8KjJEk+Erv1DH4AcSYpUgEQJNHNrjjFzDGEIfUSVPknvc/Ha66bVIsWnHG0Lxjdplz2G4jwbTtYt4rt4ybteyDR55447VzhoCYsuS5vWLcYQ+sue6IZY/NIOK8Fads+ciSZ2bFTS/NhcAQyxxwSkQnCSDklhegSUQQkmGFKjs06GefcT6QJrYWQIxFptmlAPQxSAej9AAFnhigjcnAPSaoEQAhr6yxQAG45IIlIp4Ds6S+r25QJUsCqPNGe6vkv/oECdl+rdW98l8AAAAldEVYdGRhdGU6Y3JlYXRlADIwMjAtMDktMDZUMjI6Mzk6MTItMDQ6MDBnhcsbAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIwLTA5LTA2VDIyOjM5OjEyLTA0OjAwFthzpwAAAABJRU5ErkJggg==';
     
-            add_menu_page(
+            $this->page = add_menu_page(
                 $title['themezone'],
                 $title['themezone'],
                 'edit_theme_options',
@@ -180,9 +182,6 @@ if ( ! class_exists( 'Themezone' ) ){
 					}
 				}
             }
-
-            do_action('themezone-opts-register-settings');
-			do_action('themezone-opts-register-settings-themezone_group');
         }
         
         /**
@@ -243,8 +242,7 @@ if ( ! class_exists( 'Themezone' ) ){
 				add_option( 'themezone', $this->theme_zone_default_values() );
 			}
 			$this->options = get_option( 'themezone' );
-		}
-
+        }
 
     }
 }

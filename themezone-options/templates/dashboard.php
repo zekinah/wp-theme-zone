@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
 
     <div class="dashboard-tab register">
         <div id="zn-wrapper">
-            <form method="post" action="options.php" enctype="multipart/form-data" id="zn-form-wrapper">
+            <form id="zn-form-wrapper" method="post" action="options.php" enctype="multipart/form-data">
                 <?php
                     settings_fields('themezone_group');
                     $this->options['last_tab'] = isset( $this->options['last_tab'] ) ? $this->options['last_tab'] : false;
