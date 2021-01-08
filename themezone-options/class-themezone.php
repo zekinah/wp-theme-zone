@@ -71,7 +71,38 @@ if ( ! class_exists( 'Themezone' ) ){
         public function enqueue_scripts(){
 
             wp_enqueue_script( 'themezone-option-js', THEME_URI. '/themezone-options/assets/js/themezoneoption.js', array('jquery'), $this->version );
-        
+
+            wp_register_script( 'themezone-option-js', THEME_URI. '/themezone-options/assets/js/themezoneoption.js', array('jquery'), $this->version );
+
+			$screen = get_current_screen();
+
+			if( is_object( $screen ) && 'toplevel_page_revslider' !== $screen->base ){
+
+				// syntax highlight
+
+	 			$cm_args = array(
+	 				'autoRefresh' => true,
+	 			  'lint' => true,
+	 				'indentUnit' => 2,
+	 				'tabSize' => 2,
+	 			);
+
+	 			$codemirror['css']['codeEditor'] = wp_enqueue_code_editor(array(
+	 				'type' => 'text/css', // required for lint
+	 				'codemirror' => $cm_args,
+	 			));
+
+	 			$codemirror['javascript']['codeEditor'] = wp_enqueue_code_editor(array(
+	 				'type' => 'javascript', // required for lint
+	 				'codemirror' => $cm_args,
+	 			));
+
+	 			wp_localize_script( 'themezone-option-js', 'zn_cm', $codemirror );
+
+			}
+
+            wp_enqueue_script( 'themezone-option-js' );
+             
             //Enqueue all of the js of fields
             foreach($this->sections as $z => $section){
 				if(isset($section['fields'])){
@@ -87,7 +118,7 @@ if ( ! class_exists( 'Themezone' ) ){
 						}
 					}
 				}
-			}
+            }
         }
 
         /**
