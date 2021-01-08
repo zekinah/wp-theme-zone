@@ -3,6 +3,35 @@
 	$ = jQuery.noConflict();
 
 	function themezoneoptions(){
+
+		// syntax highlighter
+		var editor = ['css','javascript'];
+		var editorEl, editorInstance;
+	
+		$.each( editor, function( index, value ){
+	
+		  editorEl = $( '.custom-'+ value +' textarea' );
+	
+		  if ( typeof zn_cm === 'undefined' ) {
+			return true;
+		  }
+	
+		  if( ! editorEl.length ){
+			return true;
+		  }
+	
+		  if( wp.codeEditor === undefined ){
+			return true;
+		  }
+	
+		  editorEl.attr( 'id', 'custom-'+ value );
+	
+		  wp.codeEditor.defaultSettings.codemirror.mode = 'text/'+ value;
+	
+		  editorInstance = wp.codeEditor.initialize( 'custom-'+ value, zn_cm[value] );
+		  editorInstance.codemirror.setOption( 'lint', true );
+		  editorInstance.codemirror.refresh();
+		});
 			
 		// show 1st at start	
 		if( $('#last_tab').val() == 0 ){

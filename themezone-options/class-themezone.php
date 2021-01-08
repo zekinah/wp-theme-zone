@@ -49,7 +49,7 @@ if ( ! class_exists( 'Themezone' ) ){
             // set option with defaults
 			add_action( 'init', array( $this, 'theme_zone_set_default_options' ) );
             // register wordpress menu
-            add_action('admin_menu', array(&$this, 'theme_zone_option'));
+            add_action( 'admin_menu', array(&$this, 'theme_zone_option' ) );
             // register theme setting
             add_action( 'admin_init', array( &$this, 'register_theme_zone_setting' ) );
             // Loads Administrator CSS and JS
