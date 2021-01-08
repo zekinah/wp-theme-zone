@@ -367,6 +367,7 @@ if ( ! class_exists( 'Themezone_Options' ) ){
                         'title' 	=> __('Custom JS', 'zn-opts'),
                         'sub_desc' 	=> __('Paste your custom JS code here', 'zn-opts'),
                         'desc' 		=> __('To use jQuery code wrap it into <strong>jQuery(function($){ ... });</strong>', 'zn-opts'),
+                        'class' => 'custom-javascript',
                     ),
                 ),
             );

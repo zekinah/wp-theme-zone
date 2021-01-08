@@ -70,8 +70,6 @@ if ( ! class_exists( 'Themezone' ) ){
          */
         public function enqueue_scripts(){
 
-            wp_enqueue_script( 'themezone-option-js', THEME_URI. '/themezone-options/assets/js/themezoneoption.js', array('jquery'), $this->version );
-
             wp_register_script( 'themezone-option-js', THEME_URI. '/themezone-options/assets/js/themezoneoption.js', array('jquery'), $this->version );
 
 			$screen = get_current_screen();
@@ -79,7 +77,6 @@ if ( ! class_exists( 'Themezone' ) ){
 			if( is_object( $screen ) && 'toplevel_page_revslider' !== $screen->base ){
 
 				// syntax highlight
-
 	 			$cm_args = array(
 	 				'autoRefresh' => true,
 	 			  'lint' => true,
