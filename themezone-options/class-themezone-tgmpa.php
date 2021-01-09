@@ -122,22 +122,15 @@ if ( ! class_exists( 'Themezone_Tgmpa' ) ){
                     'force_deactivation' => false
                 ),
                 array(
-                    'name'      => 'Autoptimize', //repo name
-                    'slug'      => 'autoptimize', //url
+                    'name'      => 'LiteSpeed', //repo name
+                    'slug'      => 'litespeed-cache', //url
                     'required'  => false,
                     'force_activation' => false,
                     'force_deactivation' => false
                 ),
                 array(
-                    'name'      => 'Async JavaScript', //repo name
-                    'slug'      => 'async-javascript', //url
-                    'required'  => false,
-                    'force_activation' => false,
-                    'force_deactivation' => false
-                ),
-                array(
-                    'name'      => 'W3 Total Cache', //repo name
-                    'slug'      => 'w3-total-cache', //url
+                    'name'      => 'WebP Converter for Media', //repo name
+                    'slug'      => 'webp-converter-for-media', //url
                     'required'  => false,
                     'force_activation' => false,
                     'force_deactivation' => false
@@ -171,7 +164,7 @@ if ( ! class_exists( 'Themezone_Tgmpa' ) ){
                     'slug'      => 'zone-cookie', //url
                     'source'    => '/zekinah/Zone-Cookie/archive/master.zip',
                     'external_url' => 'https://wordpress.org/plugins/zone-cookie/',
-                    'version'	=> '1.0.3',
+                    'version'	=> '1.0.5',
                     'required'  => false,
                     'force_activation' => false,
                     'force_deactivation' => false
